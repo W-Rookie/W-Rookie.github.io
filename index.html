@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="모의해킹과 취약점 진단 프로젝트를 기록하는 W-Rookie의 정보보안 기술 블로그">
+  <meta name="theme-color" content="#08090b">
+  <title>W-Rookie Security Log</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="W-Rookie Security Log 홈">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" aria-label="주요 메뉴">
+      <a class="active" href="#home">HOME</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#notes">NOTES</a>
+      <a href="#about">ABOUT</a>
+      <a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> OFFENSIVE SECURITY · VULNERABILITY ASSESSMENT</p>
+        <h1>찾아내고,<br><em>검증하고,</em><br>개선합니다.</h1>
+        <p class="hero-description">허가된 환경에서 공격자의 관점으로 취약점을 찾고, 재현 가능한 증거와 방어자의 언어로 결과를 기록합니다.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">프로젝트 보기 <span>↓</span></a>
+          <a class="button button-ghost" href="#about">블로그 소개</a>
+        </div>
+      </div>
+
+      <aside class="terminal-card reveal" aria-label="관제 터미널 예시">
+        <div class="terminal-head"><span></span><span></span><span></span><b>sensor-01 / live</b></div>
+        <div class="terminal-body">
+          <p><i>10:24:11</i> <b>[SCAN]</b> endpoint discovery</p>
+          <p><i>10:24:12</i> target=/api/profile?id=21</p>
+          <p><i>10:24:14</i> <b>[FINDING]</b> access control</p>
+          <p><i>10:24:15</i> severity=HIGH evidence=stored</p>
+          <p class="terminal-ok"><i>10:24:16</i> report generated <span>●</span></p>
+        </div>
+        <div class="radar" aria-hidden="true"><span></span><i></i></div>
+        <div class="terminal-foot"><span>SCOPE</span><strong>AUTHORIZED LAB ONLY</strong><small>01</small></div>
+      </aside>
+
+      <div class="hero-meta reveal">
+        <span><b>01</b> RECON</span>
+        <span><b>02</b> ASSESS</span>
+        <span><b>03</b> REPORT</span>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> PUBLIC SECURITY PROJECTS</p>
+          <h2>공개 프로젝트</h2>
+        </div>
+        <p>GitHub에 공개된 작업만 선별했습니다.<br>비공개 저장소는 포함하지 않습니다.</p>
+      </div>
+
+      <div class="project-summary reveal">
+        <div><strong>07</strong><span>PUBLIC REPOSITORIES</span></div>
+        <p>자동 진단, 모의해킹, 취약점 탐지 도구와 보안 스터디 기록을 한곳에서 확인할 수 있습니다.</p>
+        <a href="https://github.com/W-Rookie?tab=repositories" target="_blank" rel="noreferrer">ALL REPOSITORIES ↗</a>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card project-featured reveal">
+          <a href="https://github.com/W-Rookie/Automatic-scanner-tool" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 01</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-core" aria-hidden="true"><i></i><span>SCAN</span></div>
+            <div class="project-copy"><p class="project-type">AUTOMATED VULNERABILITY ASSESSMENT</p><h3>ROOKIESCAN</h3><p>입력 후보 탐색, AI 기반 도구 선택, 9종 로컬 스캐너 실행, 대시보드와 PDF 보고서 생성을 연결한 웹 취약점 자동 진단 도구입니다.</p><div class="tech-list"><span>PYTHON</span><span>OPENAI</span><span>STREAMLIT</span><span>SECURITY</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card project-tall reveal">
+          <a href="https://github.com/W-Rookie/SK_Shieldus_Rookies34_Penetration-Testing-Project" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 02</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">PENETRATION TESTING</p><h3>OWASP Juice Shop<br>모의해킹 프로젝트</h3><p>가상환경에서 주요 웹 취약점 12건을 식별하고 공격 시나리오, 영향도와 조치 방안을 보고서로 정리한 팀 프로젝트입니다.</p><div class="tech-list"><span>BURP SUITE</span><span>KALI</span><span>OWASP</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/W-Rookie/SK_Shieldus_project1" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 03</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">MALWARE RISK ANALYSIS</p><h3>파일 정적 분석<br>위험도 추론</h3><p>파일 업로드 정적 분석을 기반으로 악성코드 위험도를 추론하고 배치 평가하는 2단계 머신러닝 모듈입니다.</p><div class="tech-list"><span>PYTHON</span><span>MACHINE LEARNING</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/W-Rookie/File-upload-monitoring-and-automated-blocking" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 04</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">FILE UPLOAD SECURITY</p><h3>파일 업로드<br>실시간 차단</h3><p>업로드 파일의 확장자를 검증하고 웹셸 등 허용되지 않은 파일을 실시간으로 차단하는 방어 시스템입니다.</p><div class="tech-list"><span>PHP</span><span>JAVASCRIPT</span><span>MYSQL</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/W-Rookie/Reflected-XSS" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 05</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">WEB VULNERABILITY TOOL</p><h3>Reflected XSS<br>자동화 스크립트</h3><p>반사형 XSS 취약점 점검 과정을 Python 스크립트로 자동화한 학습용 보안 도구입니다.</p><div class="tech-list"><span>PYTHON</span><span>XSS</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/W-Rookie/T34M-ROOKIE-Study-Archive" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 06</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">SECURITY STUDY</p><h3>T34M ROOKIE<br>Study Archive</h3><p>매주 진행한 CTF와 보안 문제의 분석 과정, 핵심 아이디어와 Write-up을 축적하는 팀 스터디 저장소입니다.</p><div class="tech-list"><span>CTF</span><span>WRITE-UP</span><span>TEAM</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <a href="https://github.com/W-Rookie/python_brute_Tool" target="_blank" rel="noreferrer">
+            <div class="project-head"><span class="project-no">PROJECT 07</span><span class="project-status">PUBLIC ●</span></div>
+            <div class="project-copy"><p class="project-type">SECURITY AUTOMATION</p><h3>Python<br>Brute Tool</h3><p>브루트포스 실습 과정을 자동화하기 위해 구성한 Python 기반 학습용 도구 저장소입니다.</p><div class="tech-list"><span>PYTHON</span><span>AUTOMATION</span></div></div>
+            <span class="project-link">VIEW ON GITHUB ↗</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="notes-section" id="notes">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow"><span></span> SECURITY FUNDAMENTALS</p>
+          <h2>기초 학습 기록</h2>
+        </div>
+        <p>취약점을 제대로 설명하기 위해 필요한<br>네트워크·탐지 기초를 함께 기록합니다.</p>
+      </div>
+
+      <div class="notes-toolbar reveal">
+        <div class="filters" role="group" aria-label="글 분류">
+          <button class="filter active" type="button" data-filter="all">ALL <sup>03</sup></button>
+          <button class="filter" type="button" data-filter="snort">SNORT <sup>01</sup></button>
+          <button class="filter" type="button" data-filter="soc">SOC <sup>01</sup></button>
+          <button class="filter" type="button" data-filter="network">NETWORK <sup>01</sup></button>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">글 검색</span>
+          <input id="post-search" type="search" placeholder="기록 검색..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+      <div class="post-grid" id="post-grid">
+        <article class="post-card featured reveal" data-category="snort" data-search="snort rule msg itype sid rev 탐지 규칙">
+          <a href="posts/snort-rule-options.html" aria-label="Snort Rule 옵션 제대로 읽기">
+            <div class="card-top"><span class="tag">SNORT</span><time datetime="2026-10-25">2026.10.25</time></div>
+            <div class="rule-visual" aria-hidden="true">
+              <span><b>alert</b> icmp any any → any any</span>
+              <span>(<i>msg</i>:"icmp-request";</span>
+              <span><i>itype</i>:8; <i>sid</i>:1000000;)</span>
+            </div>
+            <div class="card-copy">
+              <p class="card-index">01 / FEATURED</p>
+              <h3>Snort Rule 옵션<br>제대로 읽기</h3>
+              <p>msg, itype, sid, rev가 실제 탐지 과정에서 어떤 역할을 하는지 하나의 규칙으로 정리합니다.</p>
+              <span class="read-more">READ NOTE <b>↗</b></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-card reveal" data-category="soc" data-search="보안관제 통합분석 siem rule signature policy 상관분석">
+          <a href="posts/siem-detection-rules.html" aria-label="Rule, Signature, Policy의 차이">
+            <div class="card-top"><span class="tag">SOC</span><time datetime="2026-10-23">2026.10.23</time></div>
+            <div class="card-copy">
+              <p class="card-index">02 / CONCEPT</p>
+              <h3>Rule, Signature,<br>Policy의 차이</h3>
+              <p>공격 패턴 하나에서 여러 로그를 엮는 상관분석까지, 관제 규칙의 범위를 구분합니다.</p>
+              <span class="read-more">READ NOTE <b>↗</b></span>
+            </div>
+          </a>
+        </article>
+
+        <article class="post-card reveal" data-category="network" data-search="tcp psh push 정규표현식 regex anchor 네트워크">
+          <a href="posts/tcp-psh-regex-anchor.html" aria-label="TCP PSH와 정규표현식 앵커">
+            <div class="card-top"><span class="tag">NETWORK</span><time datetime="2026-10-22">2026.10.22</time></div>
+            <div class="card-copy">
+              <p class="card-index">03 / QUICK NOTE</p>
+              <h3>TCP PSH와<br>정규표현식 앵커</h3>
+              <p>패킷 분석에서 자주 보이는 PSH 플래그와 패턴의 위치를 고정하는 앵커를 빠르게 복습합니다.</p>
+              <span class="read-more">READ NOTE <b>↗</b></span>
+            </div>
+          </a>
+        </article>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>일치하는 기록이 없습니다.</p>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-number" aria-hidden="true">// 04</div>
+      <div class="about-copy reveal">
+        <p class="eyebrow"><span></span> ABOUT THIS LOG</p>
+        <h2>공격자의 관점,<br><em>방어자의 기록.</em></h2>
+      </div>
+      <div class="about-text reveal">
+        <p>이곳은 모의해킹과 취약점 진단 프로젝트를 중심으로 분석 과정, 재현 증거와 대응 방안을 정리하는 개인 정보보안 기술 블로그입니다.</p>
+        <p>모든 점검과 실습은 허가된 대상과 가상환경에서 수행하며, 발견 자체보다 근거 있는 판정과 개선까지 연결하는 것을 목표로 합니다.</p>
+        <a href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">github.com/W-Rookie <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 W-ROOKIE. AUTHORIZED SECURITY RESEARCH ONLY.</p>
+    <a href="#home">BACK TO TOP ↑</a>
+  </footer>
+</body>
+</html>
