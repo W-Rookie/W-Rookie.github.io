@@ -52,7 +52,7 @@
         <div class="scan-top">
           <span class="scan-dots" aria-hidden="true"><i></i><i></i><i></i></span>
           <strong>AUTOSCAN / LIVE</strong>
-          <span class="scan-running"><i aria-hidden="true"></i> RUNNING</span>
+          <span class="scan-running"><i aria-hidden="true"></i><b data-scan-status>RUNNING</b></span>
         </div>
         <div class="scan-body">
           <div class="scan-console" aria-live="off">
@@ -65,8 +65,8 @@
             <p class="scan-ready"><time>14:09:10</time><b>[REPORT]</b> evidence stored <span>█</span></p>
           </div>
           <div class="scan-side">
-            <div class="scan-progress"><span>SCAN PROGRESS</span><strong>87%</strong><i><b></b></i></div>
-            <div class="finding-card"><span>FINDING 01</span><strong>SQLi</strong><small>CWE-89 · CRITICAL</small></div>
+            <div class="scan-progress"><span>SCAN PROGRESS</span><strong data-scan-percent>87%</strong><i><b></b></i></div>
+            <div class="finding-card"><span data-finding-label>FINDING 01</span><strong data-finding-name>SQLi</strong><small data-finding-meta>CWE-89 · CRITICAL</small></div>
             <div class="scan-scope"><span>SCOPE</span><strong>LAB ONLY</strong></div>
           </div>
         </div>
