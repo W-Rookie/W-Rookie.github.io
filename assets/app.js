@@ -1,3 +1,40 @@
+const themeStorageKey = 'w-rookie-theme';
+const themeButton = document.querySelector('.theme-toggle');
+const themeLabel = themeButton?.querySelector('.theme-toggle-label');
+const themeIcon = themeButton?.querySelector('.theme-toggle-icon');
+
+function applyTheme(theme) {
+  const nextTheme = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = nextTheme;
+  document.documentElement.style.colorScheme = nextTheme;
+
+  const lightIsNext = nextTheme === 'dark';
+  if (themeLabel) themeLabel.textContent = lightIsNext ? 'LIGHT' : 'DARK';
+  if (themeIcon) themeIcon.textContent = lightIsNext ? '☀' : '☾';
+  if (themeButton) {
+    themeButton.setAttribute('aria-label', lightIsNext ? '화이트 모드로 변경' : '다크 모드로 변경');
+    themeButton.setAttribute('aria-pressed', String(nextTheme === 'light'));
+  }
+
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  themeColor?.setAttribute('content', nextTheme === 'light' ? '#f5f3ef' : '#08090b');
+}
+
+let savedTheme = 'dark';
+try {
+  const storedTheme = localStorage.getItem(themeStorageKey);
+  if (storedTheme === 'light' || storedTheme === 'dark') savedTheme = storedTheme;
+} catch (_) {
+  savedTheme = 'dark';
+}
+applyTheme(savedTheme);
+
+themeButton?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  applyTheme(nextTheme);
+  try { localStorage.setItem(themeStorageKey, nextTheme); } catch (_) { /* storage unavailable */ }
+});
+
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
