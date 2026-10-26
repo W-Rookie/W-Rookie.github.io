@@ -48,18 +48,16 @@
         </div>
       </div>
 
-      <aside class="terminal-card reveal" aria-label="관제 터미널 예시">
-        <div class="terminal-head"><span></span><span></span><span></span><b>sensor-01 / live</b></div>
-        <div class="terminal-body">
-          <p><i>10:24:11</i> <b>[SCAN]</b> endpoint discovery</p>
-          <p><i>10:24:12</i> target=/api/profile?id=21</p>
-          <p><i>10:24:14</i> <b>[FINDING]</b> access control</p>
-          <p><i>10:24:15</i> severity=HIGH evidence=stored</p>
-          <p class="terminal-ok"><i>10:24:16</i> report generated <span>●</span></p>
-        </div>
-        <div class="radar" aria-hidden="true"><span></span><i></i></div>
-        <div class="terminal-foot"><span>SCOPE</span><strong>AUTHORIZED LAB ONLY</strong><small>01</small></div>
-      </aside>
+      <figure class="pentest-visual reveal">
+        <img src="assets/pentest-live.webp" alt="허가된 웹 모의해킹 실습 환경에서 프록시 요청과 접근제어 취약점을 분석하는 화면" width="1200" height="996" fetchpriority="high" decoding="async">
+        <span class="visual-scan" aria-hidden="true"></span>
+        <div class="visual-live"><span aria-hidden="true"></span> AUTHORIZED TEST / LIVE LAB</div>
+        <figcaption class="visual-copy">
+          <p>WEB APPLICATION ASSESSMENT</p>
+          <h2>REQUEST → VALIDATE → EVIDENCE</h2>
+          <div><span>PROXY</span><span>ACCESS CONTROL</span><span>REPORT</span></div>
+        </figcaption>
+      </figure>
 
       <div class="hero-meta reveal">
         <span><b>01</b> RECON</span>
