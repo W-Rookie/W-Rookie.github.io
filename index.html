@@ -48,16 +48,31 @@
         </div>
       </div>
 
-      <figure class="pentest-visual reveal">
-        <img src="assets/pentest-live.webp" alt="허가된 웹 모의해킹 실습 환경에서 프록시 요청과 접근제어 취약점을 분석하는 화면" width="1200" height="996" fetchpriority="high" decoding="async">
-        <span class="visual-scan" aria-hidden="true"></span>
-        <div class="visual-live"><span aria-hidden="true"></span> AUTHORIZED TEST / LIVE LAB</div>
-        <figcaption class="visual-copy">
-          <p>WEB APPLICATION ASSESSMENT</p>
-          <h2>REQUEST → VALIDATE → EVIDENCE</h2>
-          <div><span>PROXY</span><span>ACCESS CONTROL</span><span>REPORT</span></div>
-        </figcaption>
-      </figure>
+      <aside class="scan-terminal reveal" aria-label="SQL 인젝션 자동 탐지 라이브 콘솔">
+        <div class="scan-top">
+          <span class="scan-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <strong>AUTOSCAN / LIVE</strong>
+          <span class="scan-running"><i aria-hidden="true"></i> RUNNING</span>
+        </div>
+        <div class="scan-body">
+          <div class="scan-console" aria-live="off">
+            <p><time>14:09:01</time><b>[INIT]</b> authorized target loaded</p>
+            <p><time>14:09:03</time><b>[CRAWL]</b> 24 endpoints mapped</p>
+            <p><time>14:09:05</time><b>[TEST]</b> parameter <em>id</em> · response diff</p>
+            <p><time>14:09:07</time><b>[VERIFY]</b> behavior reproduced</p>
+            <p class="scan-alert"><time>14:09:08</time><b>[FINDING]</b> SQL Injection detected</p>
+            <p><time>14:09:09</time><b>[EVIDENCE]</b> confidence=HIGH</p>
+            <p class="scan-ready"><time>14:09:10</time><b>[REPORT]</b> evidence stored <span>█</span></p>
+          </div>
+          <div class="scan-side">
+            <div class="scan-progress"><span>SCAN PROGRESS</span><strong>87%</strong><i><b></b></i></div>
+            <div class="finding-card"><span>FINDING 01</span><strong>SQLi</strong><small>CWE-89 · CRITICAL</small></div>
+            <div class="scan-scope"><span>SCOPE</span><strong>LAB ONLY</strong></div>
+          </div>
+        </div>
+        <div class="scan-foot"><span>REQUEST → TEST → VERIFY</span><strong>AUTHORIZED ASSESSMENT</strong></div>
+        <span class="scan-beam" aria-hidden="true"></span>
+      </aside>
 
       <div class="hero-meta reveal">
         <span><b>01</b> RECON</span>
