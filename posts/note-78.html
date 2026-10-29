@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적- 서비스 제공에 필요한 사용자 입력 및 실행단계의 흐름에 대한 검증의 적절성 여부 점검- 서버 사이드에서 적절한 검증을 통해 비정상적인 입력 및 프로세스 흐름으로 허용되지 않은 웹 애플리케이션 내 발생할 수 있는 논리적 오류를 차단하기 위함 판단 기준…"><meta name="theme-color" content="#08090b"><title>프로세스 검증 누락 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 08<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-31">2026.03.31</time><span>2 MIN READ</span></div><h1>프로세스 검증 누락</h1><p>점검 목적- 서비스 제공에 필요한 사용자 입력 및 실행단계의 흐름에 대한 검증의 적절성 여부 점검- 서버 사이드에서 적절한 검증을 통해 비정상적인 입력 및 프로세스 흐름으로 허용되지 않은 웹 애플리케이션 내 발생할 수 있는 논리적 오류를 차단하기 위함 판단 기준…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p>- 서비스 제공에 필요한 사용자 입력 및 실행단계의 흐름에 대한 검증의 적절성 여부 점검</p>
+<p>- 서버 사이드에서 적절한 검증을 통해 비정상적인 입력 및 프로세스 흐름으로 허용되지 않은 웹 애플리케이션 내 발생할 수 있는 논리적 오류를 차단하기 위함</p>
+<p> </p>
+<p>판단 기준</p>
+<p><b> 양호</b> : 프로세스에 대한 검증이 존재하며, 악의적인 행위(URL 직접 접근, Javascript 로직 변조 등)를 통하여 논리 오류가 발생하지 않는 경우</p>
+<p><span style="color: #ee2323;"><b> 취약</b></span> : 프로세스에 대한 검증이 미흡하여, 논리 오류를 통한 의도된 기능이 왜곡되거나 보안 취약점이 노출되는 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p>- 프로세스 검증이 필요한 경우 각 프로세스에 대한 체크 로직 구현</p>
+<p> </p>
+<p>점검 방법</p>
+<p>Step 1) 웹 사이트 내 기능들의 권한 종류 및 프로세스의 흐름을 파악하고 각 프로세스의 통제를 우회 및 악용 가능성 여부 점검(권한 상승, 민감 정보 획득, 가격 변조 등)</p>
+<p><span style="color: #ee2323;"><b>* 비 로그인 상태로 URL 직접 접근을 통해 내부 사용자 관리 페이지로 접근할 수 있는지 확인하는 예시</b></span></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/78/image-01.png" loading="lazy" width="770" height="225" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>가격 정보에 대한 검증이 미흡하여, 파라미터 변조를 통해 변조된 가격으로 상품 구매 가능 여부 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/78/image-02.png" loading="lazy" width="766" height="403" alt=""></span></figure>
+</p>
+<p> </p>
+<p>조치 방법</p>
+<p>1. 모든 비즈니스 로직에서 예상된 프로세스 흐름을 검토하여, 중간 단계를 생략하거나 우회할 수 없도록 플로우 제어 로직을 추가하여, 사용자가 단계별로 진행했는지 검증하도록 구현</p>
+<p>2. 인증이 필요한 주요 정보 페이지에 접근 요청자의 권한을 검증하는 로직을 구현하고 임의로 수정할 수 없도록 서버 사이드에서 구현된 프로세스를 사용(세션 기반 접근 통제, 토큰 기반 접근 통제, Referer 검증 등)</p><div class="next-note"><span>NEXT NOTE</span><a href="note-77.html">취약한 비밀번호 복구 절차 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적 - 디렉터리 인덱싱 취약점을 제거하여 특정 디렉터리 내 불필요한 파일 정보의 노출 및 비인가자가 민감한 파일에 대한 접근을 차단 디렉터리 인덱싱 취약점이란?- 특정 디렉터리의 초기 페이지(index.html, home.html, default.asp 등…"><meta name="theme-color" content="#08090b"><title>디렉터리 인덱싱 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 17<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-28">2026.03.28</time><span>2 MIN READ</span></div><h1>디렉터리 인덱싱</h1><p>점검 목적 - 디렉터리 인덱싱 취약점을 제거하여 특정 디렉터리 내 불필요한 파일 정보의 노출 및 비인가자가 민감한 파일에 대한 접근을 차단 디렉터리 인덱싱 취약점이란?- 특정 디렉터리의 초기 페이지(index.html, home.html, default.asp 등…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p> </p>
+<p>- 디렉터리 인덱싱 취약점을 제거하여 특정 디렉터리 내 불필요한 파일 정보의 노출 및 비인가자가 민감한  <br>파일에 대한 접근을 차단</p>
+<p> </p>
+<p>디렉터리 인덱싱 취약점이란?</p>
+<p>- 특정 디렉터리의 초기 페이지(index.html, home.html, default.asp 등) 파일이 존재하지 않을 때 디렉터리 목록을 출력하는 취약점</p>
+<p> </p>
+<p>판단 기준</p>
+<p> </p>
+<p>- 양호 : 디렉터리 파일 리스트가 노출되지 않는 경우</p>
+<p>- 취약 : 디렉터리 파일 리스트가 노출되는 경우</p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>Step 1) URL 경로 중 확인하고자 하는 디렉터리 경로에 대하여 주소창에 입력하여 인덱싱 여부 확인</p>
+<p> </p>
+<p><figure class="imageblock alignLeft"><span><img src="../assets/posts/69/image-01.png" loading="lazy" width="461" height="202" alt=""></span></figure>
+</p>
+<p> </p>
+<p>조치 방법(서버별)</p>
+<p> </p>
+<p>Apeche</p>
+<p> </p>
+<p>-  httpd.conf 파일 내 Indexes 옵션 제거 후 서버 재기동</p>
+<blockquote>&lt;Directory /var/www/html&gt; <br>Options Indexes FollowSymLinks <br><span style="color: #ee2323;"><b># Indexes 옵션 제거</b></span> <br><span style="color: #ee2323;"><b>Options FollowSymLinks</b></span> <br>&lt;/Directory&gt;</blockquote>
+<p> </p>
+<p> </p>
+<p>Tomcat</p>
+<p> </p>
+<p>- web.xml 파일 내 아래 지시자 수정 후 서버 재기동</p>
+<p> </p>
+<blockquote>&lt;init-param&gt; <br>&lt;param-name&gt;listings&lt;/param-name&gt;<br>&lt;param-value&gt;false&lt;/param-value&gt;<br>&lt;/init-param&gt;</blockquote>
+<p> </p>
+<p> </p>
+<p>IIS (6.0 이하 기준)</p>
+<p> </p>
+<p>- 인터넷 정보 서비스 → 등록 정보 → 홈 디렉터리 → 디렉터리 검색 해제</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/69/image-02.png" loading="lazy" width="270" height="238" alt=""></span></figure>
+</p>
+<p> </p>
+<p>IIS (7.0 이상)</p>
+<p> </p>
+<p>- IIS 관리자 → 디렉터리 검색 → 사용 안 함</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/69/image-03.png" loading="lazy" width="427" height="163" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Nginx</p>
+<p> </p>
+<p>- /etc/nginx/sites-available/default 등 파일 내 아래 지시자 수정 후 서버 재기동</p>
+<p> </p>
+<blockquote>server { <br>location / { <br><span style="color: #ee2323;"><b>autoindex off;</b></span> <br>} <br>}</blockquote><div class="next-note"><span>NEXT NOTE</span><a href="note-68.html">SQL injection →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

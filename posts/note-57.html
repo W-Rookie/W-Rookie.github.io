@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="웹 스토리지HTML5 이전에는 쿠키를 이용하여 데이터를 저장해야 했다. 하지만 쿠키에 데이터를 저장하면 두 가지 제약 사항이 생긴다. 1. 쿠키는 요청 메시지가 전달될 때 자동으로 전송되기 때문에 요청이 일어날 때마다 데이터가 전송되어 성능 저하가 발생됨2. 각…"><meta name="theme-color" content="#08090b"><title>민감한 데이터 노출 2 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 28<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-30">2025.12.30</time><span>2 MIN READ</span></div><h1>민감한 데이터 노출 2</h1><p>웹 스토리지HTML5 이전에는 쿠키를 이용하여 데이터를 저장해야 했다. 하지만 쿠키에 데이터를 저장하면 두 가지 제약 사항이 생긴다. 1. 쿠키는 요청 메시지가 전달될 때 자동으로 전송되기 때문에 요청이 일어날 때마다 데이터가 전송되어 성능 저하가 발생됨2. 각…</p></header>
+    <div class="article-content tistory-content"><h4>웹 스토리지</h4>
+<p>HTML5 이전에는 쿠키를 이용하여 데이터를 저장해야 했다. 하지만 쿠키에 데이터를 저장하면 두 가지 제약 사항이 생긴다.</p>
+<p> </p>
+<blockquote>1. 쿠키는 요청 메시지가 전달될 때 자동으로 전송되기 때문에 요청이 일어날 때마다 데이터가 전송되어 성능 저하가 발생됨<br>2. 각 쿠키의 최대 길이는 웹 브라우저에 따라 다르지만, 모든 웹 브라우저를 지원하기 위해서는 최대 4093바이트의 크기로 제한해야 함.</blockquote>
+<p> </p>
+<p>그러나 HTML5에서 새롭게 지원된 웹 스토리지 기능 덕에, 그보다 더 많은 데이터를 저장할 수 있으며, 꼭 필요한 데이터가 아니라면 매번 서버로 전달하지 않아도 됨.</p>
+<p> </p>
+<p>웹 스토리지를 사용할 때는 보안에 주의를 기울여야 함 왜냐하면 스토리지에 저장된 데이터는 자바스크립트를 사용하여 읽을 수 있기 때문이다. 따라서 웹 사이트 어딘가에 XSS 취약점이 존재한다면 공격자가 마음대로 자바스크립트를 실행할 수 있기에 공격자가 스토리지에 저장된 데이터를 읽을 수 있게 됨.</p>
+<p> </p>
+<p>웹 스토리지는 두 종류로 분리됨</p>
+<p>1. <span style="color: #ee2323;"><b>세션 스토리지</b></span></p>
+<p>- 세션이 종료되면 데이터도 같이 종료됨</p>
+<p>2. <b><span style="color: #ee2323;">로컬 스토리지</span></b></p>
+<p>- 세션이 종료돼도 삭제 요청이 있기 전까진 데이터가 계속 남아있음 때문에 로컬 스토리지를 더 신경 써야 함</p>
+<p> </p>
+<p> </p>
+<p style="text-align: center;"><b>실습</b></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/57/image-01.png" loading="lazy" width="1067" height="291" alt=""></span></figure>
+</p>
+<p> </p>
+<p>당신의 로그인 이름과 시크릿이 HTML5 웹에 저장되어 있다는 문구가 있다.</p>
+<p>힌트로는 XSS를 사용하라고 한다.</p>
+<p> </p>
+<p>웹 스토리지 정보는 개발자도구(F12) 기능으로 확인이 가능하다 </p>
+<p>개발자도구 → Storage → Local Storage</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/57/image-02.png" loading="lazy" width="922" height="298" alt=""></span></figure>
+</p>
+<p> </p>
+<p>스토리지 안에 정보가 login은 bee secret는 Any bugs? 문구가 떠있다.</p>
+<p>위에 말했듯이 로컬스토리지에 저장된 정보는 웹사이트 어딘가에 XSS 취약점이 존재한다는 경우 접근이 가능하다.</p>
+<p> </p>
+<blockquote>Tip<br>- XSS 취약점이 있다면 <span style="color: #ee2323;"><b>웹 스토리지에 저장된 정보를 알아낼 수 있다.</b></span></blockquote>
+<p> </p>
+<p>XSS으로 스토리지를 읽기 위해 웹페이지에 있는 XSS 실습공간에서 해보았다.</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/57/image-03.png" loading="lazy" width="832" height="427" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>저기 위에 있는 First name 입력칸에 다음과 같은 코드를 입력해 보았다.</p>
+<p> </p>
+<div class="code-block"><pre id="code_1767105221641"><code>&lt;script&gt;alert('secret: ' + localStorge.getItem('secret'))&lt;/script&gt;</code></pre>
+</div><p> </p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/57/image-04.png" loading="lazy" width="495" height="121" alt=""></span></figure>
+</p>
+<p> </p>
+<p>아까 전 로컬스토리지에서 보았던 문구가 출력이 되었다. </p>
+<p>즉, XSS로 스토리지 값을 볼 수 있다는 것을 확인할 수 있었다.</p><div class="next-note"><span>NEXT NOTE</span><a href="note-56.html">민감한 데이터 노출 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

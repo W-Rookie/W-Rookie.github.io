@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적- 사용자의 세션 ID를 적절히 관리하여 공격자가 불법적으로 접근하거나 비인가적인 세션 탈취를 차단하기 위함 참고※ 세션(Session): 일정 시간 동안 같은 사용자(브라우저)로 부터 들어오는 일련의 요구를 하나의 상태로 보고 그 상태를 일정하게 유지시…"><meta name="theme-color" content="#08090b"><title>불충분한 세션 관리 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 05<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-31">2026.03.31</time><span>2 MIN READ</span></div><h1>불충분한 세션 관리</h1><p>점검 목적- 사용자의 세션 ID를 적절히 관리하여 공격자가 불법적으로 접근하거나 비인가적인 세션 탈취를 차단하기 위함 참고※ 세션(Session): 일정 시간 동안 같은 사용자(브라우저)로 부터 들어오는 일련의 요구를 하나의 상태로 보고 그 상태를 일정하게 유지시…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p>- 사용자의 세션 ID를 적절히 관리하여 공격자가 불법적으로 접근하거나 비인가적인 세션 탈취를 차단하기 위함</p>
+<p> </p>
+<p>참고</p>
+<p>※ 세션(Session): 일정 시간 동안 같은 사용자(브라우저)로 부터 들어오는 일련의 요구를 하나의 상태로 보고 그 상태를 일정하게 유지시키는 기술</p>
+<p>※ JSON Web Token (JWT): 헤더, 페이로드, 서명으로 구성되는 JSON 객체 형식이며, 사용자 정보가 클라이언트에 저장되고 서버에 요청 시마다 전송하여 인증 상태를 유지시키는 기술</p>
+<p> </p>
+<p>판단 기준</p>
+<p><b> 양호</b> : 추측 불가능한 세션 ID가 발급되고, 세션 종료 시간이 설정되어 있는 경우</p>
+<p><span style="color: #ee2323;"><b>취약</b> </span>: 세션 ID가 일정한 패턴으로 발급되거나 세션 종료 시간이 설정되지 않아 세션 재사용이 가능한 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p>- 추측 불가능한 세션 ID가 발급되도록 로직을 구현하고, 세션 종료 시간 설정 또는 자동 로그아웃 기능을 구현하여 사이트 특성에 맞게 적정 시간을 설정</p>
+<p> </p>
+<p>점검 방법</p>
+<p>Step 1) 로그인 과정에서 발급받은 세션 ID를 확인하고 로그아웃 후 재 로그인 시 각각 발급받은 세션 ID에 대해 일정한 패턴이 존재하는지 검증</p>
+<p><span style="color: #ee2323;"><b>* 각각 발급받은 세션 ID를 확인하여 예측 가능한 패턴으로 생성되는지 검증</b></span></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/81/image-01.png" loading="lazy" width="768" height="270" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 로그인 후 웹 페이지 사용을 중지한 상태로 일정 시간이 경과하였을 때 세션이 유지되는지 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/81/image-02.png" loading="lazy" width="767" height="502" alt=""></span></figure>
+</p>
+<p> </p>
+<p><b> JWT(JSON Web Token</b></p>
+<p> </p>
+<p>Step 1) 사용자 인증 및 상태 유지를 위해 JWT(JSON Web Token)가 사용되는지 확인 (JWT는 일반적으로 Authorization 헤더에 포함되고, 경우에 따라 Cookie 헤더에 포함, 또는 POST 데이터로 전송할 수 있음)</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/81/image-03.png" loading="lazy" width="769" height="181" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) JWT(JSON Web Token)의 헤더와 페이로드 부분을 각각 Base64 디코딩하여 내용을 확인할 수 있으며, 안전한 알고리즘을 사용하는지, 토큰 만료 설정이 적절하게 되었는지, 민감정보가 노출되는지 등을 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/81/image-04.png" loading="lazy" width="769" height="270" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>Step 3) 페이로드 변조 후 서명을 삭제하거나 None 알고리즘으로 변조하였을 때 토큰이 유효하여 타 계정의 권한 탈취가 가능한지 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/81/image-05.png" loading="lazy" width="766" height="255" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. 공격자가 하나의 유효한 세션 ID를 추측하는 것이 불가능에 가깝도록 길고 복잡한 세션 ID를 생성하여야 하며, 새 로그인 시 기존 세션 ID를 폐기하고 새로운 세션 ID로 발급해야 하며, 이용 중인 계정에 대해 접속 IP와 디바이스 정보를 통해 동시 세션 로그인 여부를 검사해야함</p><div class="next-note"><span>NEXT NOTE</span><a href="note-80.html">파일 다운로드 [File Download] →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

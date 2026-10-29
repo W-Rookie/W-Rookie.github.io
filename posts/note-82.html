@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적- 서버와 클라이언트 간 통신 시 데이터의 암호화 여부 점검- 서버와 클라이언트 간 통신 시 데이터의 암호화 전송 미흡으로 정보 유출의 위험을 방지하고자 함 참고※ Sniffing : 스니퍼(sniff: 냄새를 맡다, 코를 킁킁거리다)를 이용하여 네트워크…"><meta name="theme-color" content="#08090b"><title>데이터 평문 전송 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 04<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-31">2026.03.31</time><span>2 MIN READ</span></div><h1>데이터 평문 전송</h1><p>점검 목적- 서버와 클라이언트 간 통신 시 데이터의 암호화 여부 점검- 서버와 클라이언트 간 통신 시 데이터의 암호화 전송 미흡으로 정보 유출의 위험을 방지하고자 함 참고※ Sniffing : 스니퍼(sniff: 냄새를 맡다, 코를 킁킁거리다)를 이용하여 네트워크…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p>- 서버와 클라이언트 간 통신 시 데이터의 암호화 여부 점검</p>
+<p>- 서버와 클라이언트 간 통신 시 데이터의 암호화 전송 미흡으로 정보 유출의 위험을 방지하고자 함</p>
+<p> </p>
+<p>참고</p>
+<p>※ Sniffing : 스니퍼(sniff: 냄새를 맡다, 코를 킁킁거리다)를 이용하여 네트워크 상의 데이터를 도청하는 행위</p>
+<p> </p>
+<p>판단 기준</p>
+<p><b> 양호</b> : 중요 정보 전송구간에 암호화 통신이 적용된 경우</p>
+<p><span style="color: #ee2323;"><b> 취약</b></span> : 중요 정보 전송구간에 암호화 통신이 이루어지지 않는 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p>- 사이트의 중요 정보 전송구간(로그인, 회원가입, 회원정보관리, 게시판 등)에 대하여 암호화 통신(https, 애플리케이션방식) 적용</p>
+<p> </p>
+<p>점검 방법</p>
+<p>Step 1) 중요 정보(인증정보, 개인정보, 로그인페이지 등)를 송수신하는 페이지 존재 여부 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/82/image-01.png" loading="lazy" width="766" height="327" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 중요 정보 송수신 페이지가 암호화 통신(https, 데이터 암호화 등)을 하는지 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/82/image-02.png" loading="lazy" width="770" height="473" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>Step 3) 취약한 버전의 암호 프로토콜 사용 시 암호화된 통신 내용이 유출될 가능성이 존재하므로 취약한 버전의 SSL(SSL 2.0, 3.0) 사용 여부를 점검</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/82/image-03.png" loading="lazy" width="767" height="456" alt=""></span></figure>
+</p>
+<p><br>조치 방법</p>
+<p>1. 웹상에서의 전송 정보를 제한하여 불필요한 비밀번호, 주민등록번호, 계좌정보와 같은 중요 정보의 전송을 최소화하여야 하며, 중요 정보에 대해서는 SSL 등의 암호화 통신을 사용하여 도청으로부터의 위험을 제거함</p>
+<p>2. 쿠키와 같이 클라이언트 사이드에서 노출되는 곳에 비밀번호, 인증인식 값, 개인정보 등의 중요 정보 제거</p>
+<p>3. 암호화 전송 시 프로토콜 설계의 결함이 있는 SSLv2, SSLv3은 비활성화 필수, TLSv1.2 이상 사용을 권장함</p><div class="next-note"><span>NEXT NOTE</span><a href="note-81.html">불충분한 세션 관리 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

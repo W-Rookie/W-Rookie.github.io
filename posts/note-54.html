@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="파일업로드 취약점이란? - 파일을 올리는 기능에 적절한 보안 대책이 적용되지 않을 때 발생함Ex) 게시판에 파일을 업로드할 때, 프로필에 사진을 올릴 때 등 파일을 올릴 때 아무 파일이나 올리게 되면 웹쉘(webshell) 공격에 당할 수 있음 웹쉘이란?- web…"><meta name="theme-color" content="#08090b"><title>File upload[파일업로드] — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 31<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-25">2025.12.25</time><span>1 MIN READ</span></div><h1>File upload[파일업로드]</h1><p>파일업로드 취약점이란? - 파일을 올리는 기능에 적절한 보안 대책이 적용되지 않을 때 발생함Ex) 게시판에 파일을 업로드할 때, 프로필에 사진을 올릴 때 등 파일을 올릴 때 아무 파일이나 올리게 되면 웹쉘(webshell) 공격에 당할 수 있음 웹쉘이란?- web…</p></header>
+    <div class="article-content tistory-content"><h4>파일업로드 취약점이란?</h4>
+<p> </p>
+<p>- <b><span style="color: #ee2323;">파일을 올리는 기능에 적절한 보안 대책이 적용되지 않을 때</span></b> 발생함</p>
+<p>Ex) 게시판에 파일을 업로드할 때, 프로필에 사진을 올릴 때 등</p>
+<p> </p>
+<p>파일을 올릴 때 아무 파일이나 올리게 되면 <span style="color: #ee2323;">웹쉘(webshell) 공격</span>에 당할 수 있음</p>
+<p> </p>
+<p>웹쉘이란?</p>
+<p>- webshell은 웹페이지에서 실행되는 시스템 명령어 (command)를 칭함</p>
+<p>마치 터미널을 열어 쉘에서 명령어를 실행할 수 있는 것과 같이 웹 페이지를 통해 시스템 명령어를 내릴 수 있음</p>
+<p> </p>
+<p> </p>
+<p style="text-align: center;"><b>실습</b></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-01.png" loading="lazy" width="536" height="495" alt=""></span></figure>
+</p>
+<p> </p>
+<p>위 사진의 소스코드는 웹쉘 소스코드입니다 파일이름명은 webshell.php</p>
+<p> </p>
+<p>if 줄이 핵심인데 system() 함수로 cmd 명령어가 실행되도록 하는 기술이다.</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-02.png" loading="lazy" width="1036" height="262" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>여기 파일을 올리는 게시판이 하나 있습니다.</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-03.png" loading="lazy" width="923" height="317" alt=""></span></figure>
+</p>
+<p> </p>
+<p>업로드 파일에 webshell.php 파일을 올리게 되면..</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-04.png" loading="lazy" width="1025" height="306" alt=""></span></figure>
+</p>
+<p> </p>
+<p>업로드된 디렉터리 주소가 노출되면서 업로드에 성공했다고 알립니다.</p>
+<p>올렸다고 끝난 게 아니라 여기서부터 파일업로드는 시작입니다.</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-05.png" loading="lazy" width="1058" height="470" alt=""></span></figure>
+</p>
+<p> </p>
+<p>해당 주소로 가면 입력창의 기능이 웹페이지에 표시됩니다 이는 아까 전 system() 함수의 cmd 기능이 실행된 것입니다.</p>
+<p>즉, 명령어가 실행된다는 뜻입니다. 실행을 시켜보면..</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-06.png" loading="lazy" width="1695" height="663" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>cat /etc/passwd 명령어로 사용자 계정이 들어있는 파일의 정보를 추출할 수 있게 됩니다. </p>
+<p>당연히 다른 명령어도 되고요.</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/54/image-07.png" loading="lazy" width="802" height="161" alt=""></span></figure>
+</p><div class="next-note"><span>NEXT NOTE</span><a href="note-53.html">File Inclusion 보안 방안 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

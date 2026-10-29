@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적- 웹 애플리케이션 내 SQL문으로 해석될 수 있는 입력값 허용을 차단하고 운영 중인 데이터베이스에 대한 비인가된 접근 및 조작을 방지하여, 데이터 무결성과 보안성을 확보하기 위함 판단 기준- 양호 : 임의로 작성된 SQL 쿼리 입력에 대한 적절한 검증을…"><meta name="theme-color" content="#08090b"><title>SQL injection — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 18<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-28">2026.03.28</time><span>3 MIN READ</span></div><h1>SQL injection</h1><p>점검 목적- 웹 애플리케이션 내 SQL문으로 해석될 수 있는 입력값 허용을 차단하고 운영 중인 데이터베이스에 대한 비인가된 접근 및 조작을 방지하여, 데이터 무결성과 보안성을 확보하기 위함 판단 기준- 양호 : 임의로 작성된 SQL 쿼리 입력에 대한 적절한 검증을…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p>- 웹 애플리케이션 내 SQL문으로 해석될 수 있는 입력값 허용을 차단하고 운영 중인 데이터베이스에 대한  <br>비인가된 접근 및 조작을 방지하여, 데이터 무결성과 보안성을 확보하기 위함</p>
+<p> </p>
+<p>판단 기준</p>
+<p>- 양호 : 임의로 작성된 SQL 쿼리 입력에 대한 적절한 검증을 통해 비정상적인 쿼리가 실행되지 않도록  <br>하는 경우</p>
+<p> </p>
+<p>- 취약 : 임의로 작성된 SQL 쿼리 입력에 대한 검증이 이루어지지 않아 비정상적인 쿼리가 실행되는 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p>- 소스코드 내 SQL 쿼리를 입력값으로 받는 함수나 코드를 사용할 경우, 임의의 SQL 쿼리 입력에 대한  <br>검증 로직을 구현하여 서버에 검증되지 않는 SQL 쿼리요청 시 에러 페이지가 아닌 정상 페이지가  <br>반환되도록 필터링 처리하고 웹방화벽에 SQL 인젝션 관련 룰셋을 적용하여 SQL 인젝션 공격을 차단함</p>
+<p> </p>
+<p> </p>
+<p>점검 방법</p>
+<p>- Step 1) 사용자 입력값 조건에 따른 참, 거짓 SQL 쿼리를 삽입하여, 응답의 변화(응답시간, 에러메시지, 응답 내 <br>용 등) 유무 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/68/image-01.png" loading="lazy" width="461" height="177" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 인증 페이지(로그인, 비밀번호 검증 등) 내 참이 되는 SQL쿼리를 삽입하여 우회 유무 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/68/image-02.png" loading="lazy" width="463" height="86" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. SQL 쿼리 내 사용되는 문자열의 유효성을 검증하는 로직 구현 <br>2. 아래와 같은 특수문자에 대하여 사용자 입력값으로 지정 금지</p>
+<p> </p>
+<p><figure class="imageblock widthContent"><span><img src="../assets/posts/68/image-03.png" loading="lazy" width="483" height="113" alt=""></span></figure>
+</p>
+<p> </p>
+<p>3. Prepared Statements를 사용하여 사용자 입력과 SQL 쿼리를 분리하여 처리 <br>4. 시스템에서 제공하는 에러 메시지 및 DBMS에서 제공하는 에러코드가 노출되지 않도록 예외처리 <br>5. 웹 방화벽(WAF)에 대하여 SQL Injection 관련 룰셋 추가</p>
+<p> </p>
+<p>자바 특수문자 필터링 로직</p>
+<p> </p>
+<div class="code-block"><pre id="code_1774624214164" class="sql"><code>public static String sanitize(String input) {
+ if (input == null) {
+ return null;
+ }
+ // 특수문자 및 키워드들을 공백으로 치환
+ String[] sqlKeywords = {"SELECT", "UNION", "INSERT", "UPDATE", "DELETE", "DROP", "--"};
+ String pattern = "(?i)\\b(" + String.join("|", sqlKeywords) + ")\\b|['\"\\\\;()&lt;&gt;#/*!]";
+ Pattern regex = Pattern.compile(pattern + "|--");
+ Matcher matcher = regex.matcher(input);
+ return matcher.replaceAll(" ");
+}
+... String sanitizedInput = sanitize(userInput);</code></pre>
+</div><p> </p>
+<p>Prepared Statement 로직 </p>
+<p> </p>
+<div class="code-block"><pre id="code_1774624311766" class="sql"><code>String sql = "SELECT * FROM users WHERE username = ?";
+PreparedStatement preparedStatement = connection.prepareStatement(sql);
+preparedStatement.setString(1, userInput);
+... ResultSet resultSet = preparedStatement.executeQuery();</code></pre>
+</div><p> </p>
+<p><span style="color: #ee2323;"><b>파라미터 바인딩</b></span> : 쿼리를 실행할 때, 쿼리 문자열과 사용자 입력값(파라미터)을 분리하여 처리하는 기법. 데 <br>이터베이스는 쿼리 문자열을 미리 파싱하고 컴파일하며, 쿼리 실행 시점에 파싱된 쿼리 문자열에 파라미터를  <br>바인딩하여 데이터를 전달하므로 데이터베이스는 파라미터를 데이터로만 인식함</p>
+<p> </p>
+<p>ORM(JPA-Hibernate) 파라미터 바인딩 사용 예시</p>
+<p> </p>
+<div class="code-block"><pre id="code_1774624488443" class="java"><code>public class ItemService {
+ @PersistenceContext
+ private EntityManager em;
+ public List&lt;Item&gt; findItemsByUserInput(String userInput) {
+ 
+ // JPQL을 사용하여 SQL Injection 방지
+ String jpql = "SELECT i FROM Item i WHERE i.itemID &gt; :userInput";
+ Query query = em.createQuery(jpql, Item.class);
+ query.setParameter("userInput", userInput);
+ return query.getResultList();
+ }
+}</code></pre>
+</div><p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/68/image-04.png" loading="lazy" width="490" height="640" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p> </p><div class="next-note"><span>NEXT NOTE</span><a href="note-67.html">SSTI injection →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

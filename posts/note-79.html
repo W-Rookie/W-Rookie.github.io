@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검목적- 웹 애플리케이션 내 업로드 기능 이용 시 악성 파일의 업로드 및 실행 가능 여부 점검- 업로드되는 파일의 확장자에 대한 적절성을 검증하는 로직을 구현하여 악성 파일(Server Side Script, exe, dll, bat 등)의 업로드를 방지하고,…"><meta name="theme-color" content="#08090b"><title>File upload [악성 파일 업로드] — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 07<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-31">2026.03.31</time><span>2 MIN READ</span></div><h1>File upload [악성 파일 업로드]</h1><p>점검목적- 웹 애플리케이션 내 업로드 기능 이용 시 악성 파일의 업로드 및 실행 가능 여부 점검- 업로드되는 파일의 확장자에 대한 적절성을 검증하는 로직을 구현하여 악성 파일(Server Side Script, exe, dll, bat 등)의 업로드를 방지하고,…</p></header>
+    <div class="article-content tistory-content"><p>점검목적</p>
+<p>- 웹 애플리케이션 내 업로드 기능 이용 시 악성 파일의 업로드 및 실행 가능 여부 점검</p>
+<p>- 업로드되는 파일의 확장자에 대한 적절성을 검증하는 로직을 구현하여 악성 파일(Server Side Script, exe, dll, bat 등)의 업로드를 방지하고, 서버에 저장된 파일 경로를 유추하여 해당 파일의 실행을 제한하기 위함</p>
+<p> </p>
+<p>참고 </p>
+<p>※ Server Side Script: 웹에서 사용되는 스크립트 언어 중 서버 측에서 실행되는 스크립트</p>
+<p>※ 악성 콘텐츠: Flash 파일이나 dll, bat, exe 실행 파일 등 악성코드가 포함될 수 있는 콘텐츠</p>
+<p>※ 기반시설 특성상 원칙적으로 업로드 기능을 제한해야 하나, 부득이하게 사용해야 하는 경우 특정 사용자만 허용된 확장자의 콘텐츠 파일을 업로드할 수 있도록 구현</p>
+<p>※ 소스코드 및 취약점 점검 필요</p>
+<p> </p>
+<p>판단 기준</p>
+<p><b> 양호</b> : 업로드되는 파일에 대한 확장자 검증이 이루어지는 경우</p>
+<p><span style="color: #ee2323;"><b> 취약</b></span> : 업로드되는 파일에 대한 확장자 검증이 이루어지지 않고 업로드 경로 접근 시 정상적으로 실행이 가능한 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p>- 업로드되는 파일에 대한 확장자 검증 및 실행 권한 제거</p>
+<p> </p>
+<h4><b> 악성 콘텐츠 업로드 </b></h4>
+<p>점검 방법</p>
+<p>Step 1) 파일 업로드 기능 이용 시 파일 확장자(.exe, .bat, .sh, .dll 등) 검증 여부 확인</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-01.png" loading="lazy" width="752" height="167" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 임의 악성 파일에 대하여 정상적으로 업로드 가능 여부 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-02.png" loading="lazy" width="768" height="328" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 3) 파일 다운로드 및 특정 서비스 간 실행 기능 제공 시 클라이언트/서버에 대하여 악성 코드 감염 가능성 여부 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-03.png" loading="lazy" width="765" height="323" alt=""></span></figure>
+<figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-04.png" loading="lazy" width="758" height="253" alt=""></span></figure>
+</p>
+<p> </p>
+<h4><b> Server Side Script 업로드</b></h4>
+<p>점검 방법</p>
+<p>Step 1) Server Side Script 파일 업로드 및 파일 경로 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-05.png" loading="lazy" width="764" height="351" alt="개발자도구 F12 및 소스코드 확인"></span><figcaption>개발자도구 F12 및 소스코드 확인</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>Step 2) 업로드된 Server Side Script 파일 경로 접근 시 파일 실행 여부 확인</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/79/image-06.png" loading="lazy" width="768" height="262" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p>1. 업로드 파일명에 인코딩/디코딩, 널바이트, 태그 등을 제거할 수 있도록 정규화 및 필터링</p>
+<p>2. 업로드 파일의 확장자 및 MIME 타입에 대해 화이트리스트 방식으로 검증 로직을 구현하여 서버 사이드로 하여금 허용된 파일 유형만 업로드를 허용하며 대용량 파일 업로드 시 용량 제한 구현</p>
+<p>3. 업로드된 파일의 이름을 암호화 후 저장하여 파일 이름을 유추할 수 없도록 처리</p>
+<p>4. 업로드된 파일의 실행 권한을 제한하여 해당 파일이 서버 사이드에서 실행되지 않도록 설정</p>
+<p>5. 업로드 경로에 대하여 웹 디렉터리와 격리 조치</p>
+<p>6. 주기적으로 업로드된 파일을 대상으로 바이러스 검사 실시</p><div class="next-note"><span>NEXT NOTE</span><a href="note-78.html">프로세스 검증 누락 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="웹 취약점 스캐닝이란? - 자동화된 프로그램을 이용하여 웹사이트의 여러 가지 정보를 수집하고 이 정보를 바탕으로 어떤 취약점이 있는지 알아내는 과정이다. TIP- 웹 취약점 스캐너를 이용하면 많은 정보를 수집할 수 있음. 단 많은 트래픽을 유발하므로 반드시 담당자…"><meta name="theme-color" content="#08090b"><title>웹 취약점 스캐닝 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 49<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-08">2025.12.08</time><span>1 MIN READ</span></div><h1>웹 취약점 스캐닝</h1><p>웹 취약점 스캐닝이란? - 자동화된 프로그램을 이용하여 웹사이트의 여러 가지 정보를 수집하고 이 정보를 바탕으로 어떤 취약점이 있는지 알아내는 과정이다. TIP- 웹 취약점 스캐너를 이용하면 많은 정보를 수집할 수 있음. 단 많은 트래픽을 유발하므로 반드시 담당자…</p></header>
+    <div class="article-content tistory-content"><p>웹 취약점 스캐닝이란? </p>
+<p> </p>
+<p>- 자동화된 프로그램을 이용하여 웹사이트의 여러 가지 정보를 수집하고 이 정보를 바탕으로 어떤 취약점이 있는지 알아내는 과정이다.</p>
+<p> </p>
+<blockquote>TIP<br>- 웹 취약점 스캐너를 이용하면 많은 정보를 수집할 수 있음. 단 많은 트래픽을 유발하므로 반드시 담당자의 허가를 받고 진행해야 함</blockquote>
+<p> </p>
+<p>칼리 리눅스에 설치되어 있는 <span style="color: #ee2323;">nikto</span>라는 프로그램을 쓸 거임 <span style="color: #ee2323;">nikto</span>를 쓰게 되면 중요한 정보를 쉽게 수집할 수 있음.</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/33/image-01.png" loading="lazy" width="1451" height="811" alt=""></span></figure>
+</p>
+<p> </p>
+<p>&lt;노출된 정보&gt;</p>
+<p> </p>
+<p>○ 위와 같이 서버 헤더 및 PHP, 아파치, mod_ssl <span style="color: #ee2323;">버전</span></p>
+<p>○ 보안 관련 <span style="color: #ee2323;">헤더</span></p>
+<p>○ 허용된 <span style="color: #ee2323;">메소드 목록 정보</span></p>
+<p>○ /icons/, /images/ 경로에서 <span style="color: #ee2323;">디렉터리 인덱싱</span> 취약점 발견</p>
+<p>○ phpmyadmin 디렉터리</p>
+<p> </p>
+<p>- 이와 같은 정보들은 모의해킹을 수행하는 과정에서 향후 공격에 <span style="color: #ee2323;">중요한 단서</span>가 될 수 있음.</p>
+<p>- 이 중에서도 <span style="color: #ee2323;">오래된 버전을 사용하는 소프트웨어에는 이미 알려진 취약점</span>들이 존재할 수 있는데 이 취약점을 활용하여 쉽게 공격을 성공할 수 있는 경우가 있음</p><div class="next-note"><span>NEXT NOTE</span><a href="note-32.html">정보 수집 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적 - 사용자 정의 에러 페이지를 설정하여 기본 서버 에러 페이지 내 불필요한 정보(서버 버전 정보, 시스템 절대 경로, 스택 트레이스 등)의 제공을 차단하기 위함 보안 위협 - 에러 페이지 내 서버 및 응용 시스템의 상세한 정보를 포함한 경우, 시스템 구…"><meta name="theme-color" content="#08090b"><title>에러 페이지 정보 노출 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 16<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-28">2026.03.28</time><span>2 MIN READ</span></div><h1>에러 페이지 정보 노출</h1><p>점검 목적 - 사용자 정의 에러 페이지를 설정하여 기본 서버 에러 페이지 내 불필요한 정보(서버 버전 정보, 시스템 절대 경로, 스택 트레이스 등)의 제공을 차단하기 위함 보안 위협 - 에러 페이지 내 서버 및 응용 시스템의 상세한 정보를 포함한 경우, 시스템 구…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p> </p>
+<p>- 사용자 정의 에러 페이지를 설정하여 <span style="color: #ee2323;"><b>기본 서버 에러 페이지 내 불필요한 정보(서버 버전 정보, 시스템  </b></span><br><span style="color: #ee2323;"><b>절대 경로, 스택 트레이스 등)</b></span>의 제공을 차단하기 위함</p>
+<p> </p>
+<p>보안 위협</p>
+<p> </p>
+<p>- 에러 페이지 내 서버 및 응용 시스템의 상세한 정보를 포함한 경우, 시스템 구조와 스택 트레이스, 데이터베이스 쿼리 등 민감한 정보를 노출시켜 공격 벡터로 악용할 가능성 존재</p>
+<p> </p>
+<p>판단 기준</p>
+<p> </p>
+<p>- 양호 : 에러 발생 시 자체 정의 에러 페이지를 출력하여 <span style="color: #ee2323;"><b>과도한 정보가 노출</b></span>되지 않는 경우</p>
+<p>-취약 : 에러 발생 시 기본 에러 페이지가 출력되며, 해당 페이지에 <span style="color: #ee2323;"><b>불필요한 정보(서버 버전 정보, 시스템  </b></span><br><span style="color: #ee2323;"><b>경로, 스택 트레이스 등)</b></span>가 노출되는 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>- 웹 애플리케이션 서버 내 사용자 정의 에러 페이지를 적용함으로써 불필요한 정보 노출을 방지</p>
+<p> </p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>- Step 1) 에러 유도 시 에러 페이지 내 불필요한 정보(서버 버전 정보, 시스템 절대 경로, 스택 트레이스 등)가 노 <br>출되는지 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/70/image-01.png" loading="lazy" width="458" height="195" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법 (서버별)</p>
+<p> </p>
+<p>Apache</p>
+<p> </p>
+<p>- apache2.conf 또는 httpd.conf 파일 내 아래 지시자 추가 후 서버 재기동</p>
+<p><figure class="imageblock alignLeft"><span><img src="../assets/posts/70/image-02.png" loading="lazy" width="483" height="217" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Tomcat</p>
+<p> </p>
+<p>- server.xml 파일 내 아래 지시자 추가 후 서버 재기동</p>
+<p> </p>
+<p><figure class="imagegridblock">
+  <div class="image-container"><span style="width: 52.2234%; margin-right: 10px;"><img src="../assets/posts/70/image-03.png" loading="lazy" width="481" height="264" alt=""></span><span style="width: 46.6138%;"><img src="../assets/posts/70/image-04.png" loading="lazy" width="483" height="297" alt=""></span></div>
+</figure>
+</p>
+<p> </p>
+<p>Nginx</p>
+<p> </p>
+<p>- nginx.conf 파일 내 아래 지시자 추가 후 서버 재기동</p>
+<p> </p>
+<p><figure class="imagegridblock">
+  <div class="image-container"><span style="width: 52.7866%; margin-right: 10px;"><img src="../assets/posts/70/image-05.png" loading="lazy" width="480" height="288" alt=""></span><span style="width: 46.0506%;"><img src="../assets/posts/70/image-06.png" loading="lazy" width="474" height="326" alt=""></span></div>
+</figure>
+</p>
+<p> </p>
+<p> </p>
+<p>IIS (6.0 이하)</p>
+<p> </p>
+<p>- Microsoft사의 URLScan 3.1 도구 지원 종료로 인한 서버 버전 제거 제한</p>
+<p> </p>
+<p>에러 페이지</p>
+<p> </p>
+<p>- 인터넷 정보 서비스 → 등록 정보 → 사용자 정의 오류 → 등록 정보 편집 → 별도 에러 페이지 지정</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/70/image-07.png" loading="lazy" width="228" height="200" alt=""></span></figure>
+</p>
+<p> </p>
+<p>IIS (7.0 이상)</p>
+<p> </p>
+<p>- IIS 관리자 → 오류 페이지 → 기능 설정 편집 → 사용자 지정 오류 페이지</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/70/image-08.png" loading="lazy" width="230" height="189" alt=""></span></figure>
+</p><div class="next-note"><span>NEXT NOTE</span><a href="note-69.html">디렉터리 인덱싱 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

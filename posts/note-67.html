@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="SSTI injection 이란?- 웹 애플리케이션에서 사용자 입력값이 템플릿 엔진(Template Engine)에 의해 적절한 검증 없이 처리될 때 발생하는 보안 취약점입니다. - 공격자가 이름 칸에 {{ 7 * 7 }} 같은 코드를 입력합니다. 서버가 이를 단…"><meta name="theme-color" content="#08090b"><title>SSTI injection — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 19<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-26">2026.03.26</time><span>2 MIN READ</span></div><h1>SSTI injection</h1><p>SSTI injection 이란?- 웹 애플리케이션에서 사용자 입력값이 템플릿 엔진(Template Engine)에 의해 적절한 검증 없이 처리될 때 발생하는 보안 취약점입니다. - 공격자가 이름 칸에 {{ 7 * 7 }} 같은 코드를 입력합니다. 서버가 이를 단…</p></header>
+    <div class="article-content tistory-content"><p> SSTI injection 이란?</p>
+<p>- 웹 애플리케이션에서 사용자 입력값이 템플릿 엔진(Template Engine)에 의해 적절한 검증 없이 처리될 때 발생하는 보안 취약점입니다.</p>
+<p> </p>
+<p>- 공격자가 이름 칸에 {{ 7 * 7 }} 같은 코드를 입력합니다. 서버가 이를 단순 문자가 아닌 수식으로 계산하여 화면에 49를 출력한다면, 이 서버는 SSTI에 취약한 상태입니다.</p>
+<p> </p>
+<p>공격이 되면 왜? 위험한가?</p>
+<p>- 단순히 계산을 하는 데 그치지 않고, <span style="color: #ee2323;"><b>공격자는 템플릿 엔진의 기능을 악용해 서버의 내부 파일에 접근</b></span>하거나 원격 코드 실행(RCE)까지 이어질 수 있습니다. 즉, 서버의 제어권을 완전히 탈취당할 수 있는 치명적인 위협</p>
+<p> </p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>Step 1) 사용자 입력값이 서버 템플릿 엔진 내에서 처리되는지 확인하기 위해 {{7*7}} 등의 수식 삽입 시도</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/67/image-01.png" loading="lazy" width="616" height="341" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 상위 컨텍스트 및 객체 접근을 시도하여 원격 코드 실행의 가능 여부를 판별하기 위하여 페이로드 입력 및 실행 유무 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/67/image-02.png" loading="lazy" width="619" height="348" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. 템플릿 언어에서 <span style="color: #ee2323;"><b>예약된 의미를 가지는 문자({ } &lt; &gt; % # @ 등)에 대하여 이스케이프</b></span> 처리</p>
+<p>2. 템플릿 엔진의 <b><span style="color: #ee2323;">안전 모드를 사용</span></b>함으로써 템플릿 내에서 실행할 수 있는 명령을 제한하여 임의 코드 실행 방지</p>
+<p>3. 안전 모드 및 내장 함수를 활용하여 보안 조치를 하는 경우 엔진의 버전과 그 버전에서 지원하는 기능을 고려하여 적절한 보안 패치 진행</p>
+<p>4. 에러 메시지를 통해 사용된 템플릿 언어 및 관련 취약점에 대한 유의미한 정보를 제공할 가능성이 존재하므로, 노출되는 에러 메시지를 제한</p>
+<p>5. 템플릿 엔진 내 사용되는 특수문자를 필터링하도록 <b><span style="color: #ee2323;">웹 방화벽 룰셋 적용 </span></b></p><div class="next-note"><span>NEXT NOTE</span><a href="note-66.html">XXE(XML External Entities) injection →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

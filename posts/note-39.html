@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="불필요한 정보 노출 삭제- 반드시 필요한 경우가 아니라면, 서버 헤더의 제공되는 정보를 삭제하여 전송할 것- 웹 방화벽과 같은 보안 장비를 이용하여 일괄적으로 헤더를 삭제하는 것이 가능- 불필요한 기본 설치 파일, 백업 파일, 텍스트 파일은 모두 실제 서버에서 운…"><meta name="theme-color" content="#08090b"><title>정보 수집 대응 방안 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 45<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-10">2025.12.10</time><span>1 MIN READ</span></div><h1>정보 수집 대응 방안</h1><p>불필요한 정보 노출 삭제- 반드시 필요한 경우가 아니라면, 서버 헤더의 제공되는 정보를 삭제하여 전송할 것- 웹 방화벽과 같은 보안 장비를 이용하여 일괄적으로 헤더를 삭제하는 것이 가능- 불필요한 기본 설치 파일, 백업 파일, 텍스트 파일은 모두 실제 서버에서 운…</p></header>
+    <div class="article-content tistory-content"><h4>불필요한 정보 노출 삭제</h4>
+<p>- 반드시 필요한 경우가 아니라면, 서버 헤더의 제공되는 정보를 삭제하여 전송할 것</p>
+<p>- 웹 방화벽과 같은 보안 장비를 이용하여 일괄적으로 헤더를 삭제하는 것이 가능</p>
+<p>- <span style="color: #ee2323;">불필요한 기본 설치 파일, 백업 파일, 텍스트 파일</span>은 모두 실제 서버에서 운용되는 환경에선 <span style="color: #ee2323;">외부에 노출은 금함</span> (점검해줘야 함)</p>
+<p> </p>
+<p> </p>
+<h4>스캐너/크롤러 차단</h4>
+<p>- 자동화된 프로그램으로 완전하게 방어하는 것은 불가능함</p>
+<p>- 적절한 로깅과 모니터링을 통해 어느 정도 공격 시도를 탐지하고 차단 가능</p>
+<p>- 아파치 웹 서버 접근 로그에 기록된 요청 헤더 정보와 접속 횟수를 확인할 수 있음 (단, 정상적인 접속 내용도 포함되니 주의해서 구분)</p>
+<p>- 침입 탐지 시스템/ 침입 방지 시스템<span style="color: #ee2323;">(IDS/IPS), WAF</span>로 자동화된 공격을 탐지하고 차단할 수 있음</p>
+<p> </p>
+<h4>디렉터리 인덱싱 설정 제거</h4>
+<p> </p>
+<p>- <b><span style="color: #ee2323;">Indexes</span></b> 옵션을 제거해야 함</p>
+<p><figure class="imageblock alignLeft"><span><img src="../assets/posts/39/image-01.png" loading="lazy" width="332" height="102" alt=""></span></figure>
+</p>
+<p> </p>
+<p>이 옵션을 제거하면 디렉터리 인덱싱이 되지 않도록 설정 가능함</p>
+<p> </p>
+<p>- IIS 서버의 경우에도 디렉터리 검색 옵션을 비활성화시켜야 함</p><div class="next-note"><span>NEXT NOTE</span><a href="note-38.html">robots.txt →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

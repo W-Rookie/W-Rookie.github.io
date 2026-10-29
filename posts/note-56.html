@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="- 민감한 데이터 정보란?다음과 같다.각종 개인정보(주민등록번호, 카드 정보, 건강 정보, 종교, 정치 성향, 가족 구성원 등 사생활 관련 정보 포함)패스워드, 세션 ID, 세션 토큰 등과 같은 로그인에 사용되는 정보업무상 기밀 등 비공개를 관리되는 정보 데이터가…"><meta name="theme-color" content="#08090b"><title>민감한 데이터 노출 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 29<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-29">2025.12.29</time><span>2 MIN READ</span></div><h1>민감한 데이터 노출</h1><p>- 민감한 데이터 정보란?다음과 같다.각종 개인정보(주민등록번호, 카드 정보, 건강 정보, 종교, 정치 성향, 가족 구성원 등 사생활 관련 정보 포함)패스워드, 세션 ID, 세션 토큰 등과 같은 로그인에 사용되는 정보업무상 기밀 등 비공개를 관리되는 정보 데이터가…</p></header>
+    <div class="article-content tistory-content"><h4>- 민감한 데이터 정보란?</h4>
+<p>다음과 같다.</p>
+<blockquote>각종 개인정보(<b><span style="color: #ee2323;">주민등록번호, 카드 정보, 건강 정보, 종교, 정치 성향, 가족 구성원 등 사생활 관련 정보</span></b> 포함)<br><b><span style="color: #ee2323;">패스워드, 세션 ID, 세션 토큰</span> </b>등과 같은 로그인에 사용되는 정보<br><b><span style="color: #ee2323;">업무상 기밀</span></b> 등 비공개를 관리되는 정보</blockquote>
+<p> </p>
+<p>데이터가 적절하게 암호화되지 않거나 평문으로 저장되어 노출되는 경우이다.</p>
+<p>다음과 같다.</p>
+<blockquote>HTTP 프로토콜을 사용하여 민감한 데이터가 전송되는 경우<br>민감한 데이터가 평문으로 저장되는 경우<br>안전하지 않은 암호화 방식을 사용하는 경우</blockquote>
+<p> </p>
+<p> </p>
+<h4>HTTP 프로토콜에 의한 노출</h4>
+<p> </p>
+<p>HTTP으로 전달되는 요청, 응답 메시지들은 <b><span style="color: #ee2323;">[네트워크 스니핑]</span></b> 공격에 의해 <b>도청</b>될 가능성이 높다.</p>
+<p>사용되는 도구 </p>
+<p>- WireShark (GUI)</p>
+<p>- tcpdump (CLI)</p>
+<p> </p>
+<p> </p>
+<p style="text-align: center;"><span style="color: #ee2323;"><b>[실습]</b></span></p>
+<p style="text-align: center;"> </p>
+<p style="text-align: center;"> </p>
+<p>칼리리눅스는 CLI 기반이다 즉 이번 실습에서는 tcpdump를 사용할 것이다. </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/56/image-01.png" loading="lazy" width="520" height="55" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<blockquote><span style="color: #ee2323;"><b>&lt;옵션&gt;</b></span><br>-n : IP주소나 포트 숫자를 호스트 네임이나 서비스 이름으로 변경하지 않고 숫자 그대로 표시<br>-i : 인터페이스를 지정하는 옵션. -i eth1을 하면 eth1 인터페이스를 통해 전달되는 트래픽을 스니핑 한다.<br>-A : 사람이 알아볼 수 있는 아스키(ASCII) 형태의 문자열로 출력하는 옵션이다.<br>-s &lt;숫자&gt; : 표시할 내용의 길이를 지정함, -s 0을 사용하면 길이 제한 없이 출력됨<br>tcp : TCP프로토콜만 출력하도록 필터링함<br>port 80 : 80번 포트에 대해서만 출력하도록 필터링함</blockquote>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/56/image-02.png" loading="lazy" width="1662" height="588" alt="HTTP 80port"></span><figcaption>HTTP 80port</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>tcpdump를 실행한 채로 저기에 있는 로그인창에 bee/bug를 입력하게 되면</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/56/image-03.png" loading="lazy" width="686" height="451" alt=""></span></figure>
+</p>
+<p> </p>
+<p>아래와 같이 결괏값이 나온 것을 볼 수 있는데 POST 방식인데 login에 bee / password에 bug라는 민감한 사용자 정보가 노출되는 것을 확인할 수 있었습니다.</p>
+<p> </p>
+<p>이와 같이 HTTP 프로토콜로 전송되는 데이터는 네트워크 스니핑에 노출될 수 있음.</p><div class="next-note"><span>NEXT NOTE</span><a href="note-55.html">Fileupload[파일업로드] 보안 방안 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="SSI injection이란?- 웹 애플리케이션이 사용자로부터 입력받은 데이터를 적절한 검증 없이 HTML 페이지에 포함할 때 발생하는 삽입 공격 취약점- 공격자가 HTML 코드 안에 SSI 지시어를 삽입하여 서버 측에서 임의의 코드를 실행하거나, 민감한 파일에…"><meta name="theme-color" content="#08090b"><title>SSI (Server Side Includes) injection — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 22<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-26">2026.03.26</time><span>1 MIN READ</span></div><h1>SSI (Server Side Includes) injection</h1><p>SSI injection이란?- 웹 애플리케이션이 사용자로부터 입력받은 데이터를 적절한 검증 없이 HTML 페이지에 포함할 때 발생하는 삽입 공격 취약점- 공격자가 HTML 코드 안에 SSI 지시어를 삽입하여 서버 측에서 임의의 코드를 실행하거나, 민감한 파일에…</p></header>
+    <div class="article-content tistory-content"><p>SSI injection이란?</p>
+<p>- 웹 애플리케이션이 사용자로부터 입력받은 데이터를 적절한 검증 없이 HTML 페이지에 포함할 때 발생하는 삽입 공격 취약점</p>
+<p>- 공격자가 HTML 코드 안에 SSI 지시어를 삽입하여 서버 측에서 임의의 코드를 실행하거나, 민감한 파일에 접근하는 것이 핵심입니다.</p>
+<p> </p>
+<p>- 점검 방법</p>
+<p> </p>
+<p>Step 1) 사용자가 입력 가능한 파라미터 값에 를 삽입하여 전송 후 반환되는 페이지에 사이트의 <span style="color: #ee2323;"><b>홈 디렉터리가 표시되는지 확인</b></span></p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/64/image-01.png" loading="lazy" width="767" height="109" alt=""></span></figure>
+</p>
+<p> </p>
+<p>Step 2) 사용자가 입력 가능한 파라미터 값에 를 삽입하여 전송 후 반환되는 페이지에 디렉터리의 파일 리스트가 표시되는지 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/64/image-02.png" loading="lazy" width="767" height="196" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>Step 3) HTTP 요청(Request) 헤더에 명령어를 삽입하여 실행되는지 확인</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/64/image-03.png" loading="lazy" width="768" height="90" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. <span style="color: #ee2323;"><b>화이트리스트 방식</b></span>으로 사용자 입력에 대한 사용 가능한 문자들을 정의하여 정해진 문자를 제외한 나머지 모든 문자들을 필터링 처리</p>
+<p>2. 필터링해야 하는 대상은 GET 질의 문자열, POST 데이터, 쿠키, URL, 그리고 일반적으로 브라우저와 웹 서버가 주고받는 모든 데이터를 포함하며, 아래는 특수문자에 대한 엔티티 형태를 표시한 것임</p>
+<p>3. 웹 서버의 SSI 기능을 사용하지 않거나, <span style="color: #ee2323;"><b>웹 방화벽에 특수문자를 필터링하도록 룰셋 적용</b></span></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/64/image-04.png" loading="lazy" width="806" height="110" alt=""></span></figure>
+</p><div class="next-note"><span>NEXT NOTE</span><a href="note-63.html">OS injection →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

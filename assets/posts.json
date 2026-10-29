@@ -1,0 +1,352 @@
+[
+  {
+    "id": 85,
+    "title": "불필요한 Method 악용",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-85.html"
+  },
+  {
+    "id": 84,
+    "title": "관리자페이지 노출",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-84.html"
+  },
+  {
+    "id": 83,
+    "title": "쿠키 변조",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-83.html"
+  },
+  {
+    "id": 82,
+    "title": "데이터 평문 전송",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-82.html"
+  },
+  {
+    "id": 81,
+    "title": "불충분한 세션 관리",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-81.html"
+  },
+  {
+    "id": 80,
+    "title": "파일 다운로드 [File Download]",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-80.html"
+  },
+  {
+    "id": 79,
+    "title": "File upload [악성 파일 업로드]",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-79.html"
+  },
+  {
+    "id": 78,
+    "title": "프로세스 검증 누락",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-78.html"
+  },
+  {
+    "id": 77,
+    "title": "취약한 비밀번호 복구 절차",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-77.html"
+  },
+  {
+    "id": 76,
+    "title": "불충분한 권한 검증",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-76.html"
+  },
+  {
+    "id": 75,
+    "title": "불충분한 인증 절차",
+    "date": "2026-03-31",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-75.html"
+  },
+  {
+    "id": 74,
+    "title": "SSRF 서버사이드 요청 위조",
+    "date": "2026-03-29",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-74.html"
+  },
+  {
+    "id": 73,
+    "title": "CSRF 크로스사이트 요청 위조",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-73.html"
+  },
+  {
+    "id": 72,
+    "title": "XSS (크로스사이트 스크립트)",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-72.html"
+  },
+  {
+    "id": 71,
+    "title": "정보 노출",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-71.html"
+  },
+  {
+    "id": 70,
+    "title": "에러 페이지 정보 노출",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-70.html"
+  },
+  {
+    "id": 69,
+    "title": "디렉터리 인덱싱",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-69.html"
+  },
+  {
+    "id": 68,
+    "title": "SQL injection",
+    "date": "2026-03-28",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-68.html"
+  },
+  {
+    "id": 67,
+    "title": "SSTI injection",
+    "date": "2026-03-26",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-67.html"
+  },
+  {
+    "id": 66,
+    "title": "XXE(XML External Entities) injection",
+    "date": "2026-03-26",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-66.html"
+  },
+  {
+    "id": 65,
+    "title": "XPath injection",
+    "date": "2026-03-26",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-65.html"
+  },
+  {
+    "id": 64,
+    "title": "SSI (Server Side Includes) injection",
+    "date": "2026-03-26",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-64.html"
+  },
+  {
+    "id": 63,
+    "title": "OS injection",
+    "date": "2026-03-26",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-63.html"
+  },
+  {
+    "id": 62,
+    "title": "LDAP(Lightweght Directory Access Protocol) injection",
+    "date": "2026-03-25",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-62.html"
+  },
+  {
+    "id": 61,
+    "title": "코드 인젝션 (Code Injection)",
+    "date": "2026-03-25",
+    "category": "Vulnerability Assessment",
+    "file": "posts/note-61.html"
+  },
+  {
+    "id": 59,
+    "title": "[민감한 데이터 노출] 보안 대책",
+    "date": "2026-01-03",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-59.html"
+  },
+  {
+    "id": 58,
+    "title": "민감한 데이터 노출 3",
+    "date": "2026-01-03",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-58.html"
+  },
+  {
+    "id": 57,
+    "title": "민감한 데이터 노출 2",
+    "date": "2025-12-30",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-57.html"
+  },
+  {
+    "id": 56,
+    "title": "민감한 데이터 노출",
+    "date": "2025-12-29",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-56.html"
+  },
+  {
+    "id": 55,
+    "title": "Fileupload[파일업로드] 보안 방안",
+    "date": "2025-12-25",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-55.html"
+  },
+  {
+    "id": 54,
+    "title": "File upload[파일업로드]",
+    "date": "2025-12-25",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-54.html"
+  },
+  {
+    "id": 53,
+    "title": "File Inclusion 보안 방안",
+    "date": "2025-12-24",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-53.html"
+  },
+  {
+    "id": 52,
+    "title": "File inclusion[파일 인클루전]",
+    "date": "2025-12-24",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-52.html"
+  },
+  {
+    "id": 51,
+    "title": "CSRF 보안 대책",
+    "date": "2025-12-21",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-51.html"
+  },
+  {
+    "id": 50,
+    "title": "CSRF(Cross-site-Request-Forgery)",
+    "date": "2025-12-21",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-50.html"
+  },
+  {
+    "id": 49,
+    "title": "XSS 보안 대책",
+    "date": "2025-12-19",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-49.html"
+  },
+  {
+    "id": 48,
+    "title": "XSS(Cross-site-script)",
+    "date": "2025-12-19",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-48.html"
+  },
+  {
+    "id": 47,
+    "title": "Command injection 보안 대책",
+    "date": "2025-12-17",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-47.html"
+  },
+  {
+    "id": 46,
+    "title": "Command injection",
+    "date": "2025-12-17",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-46.html"
+  },
+  {
+    "id": 45,
+    "title": "SQL 보안 방안",
+    "date": "2025-12-15",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-45.html"
+  },
+  {
+    "id": 44,
+    "title": "SQLmap",
+    "date": "2025-12-15",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-44.html"
+  },
+  {
+    "id": 43,
+    "title": "BIind  SQL injection",
+    "date": "2025-12-15",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-43.html"
+  },
+  {
+    "id": 42,
+    "title": "SQL injection",
+    "date": "2025-12-12",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-42.html"
+  },
+  {
+    "id": 41,
+    "title": "Session Hijacking 및 보호 대책",
+    "date": "2025-12-11",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-41.html"
+  },
+  {
+    "id": 39,
+    "title": "정보 수집 대응 방안",
+    "date": "2025-12-10",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-39.html"
+  },
+  {
+    "id": 38,
+    "title": "robots.txt",
+    "date": "2025-12-10",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-38.html"
+  },
+  {
+    "id": 37,
+    "title": "DirBuster",
+    "date": "2025-12-10",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-37.html"
+  },
+  {
+    "id": 34,
+    "title": "디렉터리 인덱싱 [directory indexing]",
+    "date": "2025-12-08",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-34.html"
+  },
+  {
+    "id": 33,
+    "title": "웹 취약점 스캐닝",
+    "date": "2025-12-08",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-33.html"
+  },
+  {
+    "id": 32,
+    "title": "정보 수집",
+    "date": "2025-12-08",
+    "category": "Web Penetration Testing",
+    "file": "posts/note-32.html"
+  }
+]

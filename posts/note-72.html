@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적 - 악성 스크립트가 다른 사용자의 브라우저에서 실행되는 취약점 존재 여부 점검- 사용자 입력값에 대한 검증을 실시하여, 사용자 세션 탈취, 악성 코드 삽입 등의 악의적인 스크립트 실행을 차단하기 위함 XSS이란? - 악의적인 스크립트를 웹 페이지에 삽입…"><meta name="theme-color" content="#08090b"><title>XSS (크로스사이트 스크립트) — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 14<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-28">2026.03.28</time><span>2 MIN READ</span></div><h1>XSS (크로스사이트 스크립트)</h1><p>점검 목적 - 악성 스크립트가 다른 사용자의 브라우저에서 실행되는 취약점 존재 여부 점검- 사용자 입력값에 대한 검증을 실시하여, 사용자 세션 탈취, 악성 코드 삽입 등의 악의적인 스크립트 실행을 차단하기 위함 XSS이란? - 악의적인 스크립트를 웹 페이지에 삽입…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p> </p>
+<p>- 악성 스크립트가 다른 사용자의 브라우저에서 실행되는 취약점 존재 여부 점검</p>
+<p>- <span style="color: #ee2323;"><b>사용자 입력값에 대한 검증을 실시</b></span>하여, 사용자 세션 탈취, 악성 코드 삽입 등의 악의적인 스크립트  <br>실행을 차단하기 위함</p>
+<p> </p>
+<p> </p>
+<p>XSS이란? </p>
+<p> </p>
+<p>- 악의적인 스크립트를 웹 페이지에 삽입하여 사용자 세션 탈취, 키로깅, 피싱 공격 등을 유발하는 기법</p>
+<p> </p>
+<p>종류 </p>
+<p> </p>
+<p>저장형(Stored)</p>
+<p> </p>
+<p>반사형(Reflected</p>
+<p> </p>
+<p>DOM</p>
+<p> </p>
+<p>판단 기준</p>
+<p> </p>
+<p>-<b> 양호</b> : 사용자 입력값에 대해 검증 및 필터링이 이루어져, 악의적인 스크립트가 실행되지 않는 경우</p>
+<p>-<b> 취약</b> : 사용자 입력값에 대한 검증 및 필터링이 이루어지지 않으며, HTML 코드가 입력 및 실행되는 경우</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>- 특수문자에 대해 필터링 처리와 출력값 인코딩(HTML 엔티티, 이스케이프 등)을 적용하여 악성  <br>스크립트 실행을 방지하며, 부득이하게 HTML 코드를 사용해야 하는 경우 화이트리스트 방식을 적용해  <br>허용된 HTML 코드만 처리하도록 설정</p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>Step 1) 사용자 입력값을 전달받아 HTML 상에 렌더링되는 애플리케이션(게시판, 검색 등)에 스크립트 구문  <br>삽입 후 실행되는지 확인</p>
+<p> </p>
+<p><span style="color: #ee2323;"><b>게시글 작성 시 스크립트 구문을 삽입하여 글 열람 시 스크립트가 동작</b></span>하는 경우(Stored XSS)</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/72/image-01.png" loading="lazy" width="505" height="249" alt=""></span></figure>
+</p>
+<p> </p>
+<p>입력값이 HTML 상에 렌더링되어 스크립트가 삽입된 URL 접근 시 스크립트가 동작하는 경우(Reflected  <br>XSS)</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/72/image-02.png" loading="lazy" width="508" height="262" alt=""></span></figure>
+</p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. 크로스사이트 스크립팅 공격에 사용되는 <span style="color: #ee2323;"><b>특수문자에 대하여 입력값 검증 및 필터링(HTML 엔티티, 이스케이프 등)</b></span>처리 로직을 서버 사이드에서 구현</p>
+<blockquote>HTML 엔티티란?<br>- HTML에서 특수 문자를 브라우저에 정확하게 표시하기 위해 사용하는 대체 코드 입니다<br><br>Ex)<br>&lt;  → &amp;lt;<br><br>서버나 프론트엔드에서 <br>&lt;, &gt;<br>와 같은 기호를 엔티티로 치환(Escaping)하여, 브라우저가 코드를 '실행'하지 않고 단순한 '텍스트'로 '표시'만 하게 만드는 작업임</blockquote>
+<p>2. 부득이하게 HTML 코드를 사용해야 하는 경우 <b><span style="color: #ee2323;">화이트리스트 방식을 적용</span></b>하여 허용된 HTML 코드만 처리 <br>3. 웹 방화벽에서 웹 태그 및 스크립트 관련 특수문자 필터링 룰셋을 적용하여 추가적인 방어 확보 <br>4. 세션 탈취 방지를 위해 <span style="color: #ee2323;"><b>쿠키에 HttpOnly, Secure, SameSite 옵션을 설정하여 노출되지 않도록</b></span> 보호</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/72/image-03.png" loading="lazy" width="532" height="104" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p><figure class="imagegridblock">
+  <div class="image-container"><span style="width: 39.3016%; margin-right: 10px;"><img src="../assets/posts/72/image-04.png" loading="lazy" width="532" height="435" alt=""></span><span style="width: 59.5356%;"><img src="../assets/posts/72/image-05.png" loading="lazy" width="528" height="285" alt=""></span></div>
+</figure>
+</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/72/image-06.png" loading="lazy" width="532" height="358" alt=""></span></figure>
+</p><div class="next-note"><span>NEXT NOTE</span><a href="note-71.html">정보 노출 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

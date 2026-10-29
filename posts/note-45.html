@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="1. 입력값을 검증할 것 (화이트리스트 방식을 권고)2. 시큐어 코딩을 이용할 것 &quot;SELECT first_name, last_name FROM users WHERE user_id = &#x27;$id&#x27;;&quot;; 위 코드는 SQL 쿼리문을 조작할 수 있기 때문에 SQL 인젝션…"><meta name="theme-color" content="#08090b"><title>SQL 보안 방안 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 40<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-15">2025.12.15</time><span>1 MIN READ</span></div><h1>SQL 보안 방안</h1><p>1. 입력값을 검증할 것 (화이트리스트 방식을 권고)2. 시큐어 코딩을 이용할 것 &quot;SELECT first_name, last_name FROM users WHERE user_id = &#x27;$id&#x27;;&quot;; 위 코드는 SQL 쿼리문을 조작할 수 있기 때문에 SQL 인젝션…</p></header>
+    <div class="article-content tistory-content"><p>1. 입력값을 검증할 것 (화이트리스트 방식을 권고)</p>
+<p>2. 시큐어 코딩을 이용할 것</p>
+<p> </p>
+<div class="code-block"><pre id="code_1765798080791" class="sql"><code>"SELECT first_name, last_name FROM users WHERE user_id = '$id';";</code></pre>
+</div><p> </p>
+<p>위 코드는 SQL 쿼리문을 조작할 수 있기 때문에 SQL 인젝션에 취약합니다.</p>
+<p>예방책) 쿼리문을 실행하는 방법을 파라미터 쿼리로 변경하는 것 아래의 코드와 같음</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/45/image-01.png" loading="lazy" width="1118" height="705" alt=""></span></figure>
+</p>
+<p> </p>
+<p>- 노란 테두리에 있는 <span style="color: #f89009;">prerpare(), bindParam(), execute()</span>을 각각 호출하여 쿼리문을 실행<br><br></p>
+<p>prepare() 부분은<span style="color: #ee2323;"> "미리 실행할 쿼리문의 형태로 작성됨"</span></p>
+<p>입력값 id 피라미터에 들어갈 값을 bindParam()으로 설정 이 함수를 쓰게 되면 </p>
+<p>"사용자가 입력한 값이 쿼리문의 일부가 될 수가 없고 <span style="color: #009a87;">온전히 데이터로만 처리되기에</span> <span style="color: #ee2323;">or이나 UNION 등과 같은 키워드가 입력되어도 무의미한 문자열이 됨" (즉, SQL 공격을 하고 싶어도 할 수가 없게 처리됨.)</span></p>
+<p> </p>
+<p>다른 프로그래밍 언어에서도  쿼리를 제공하는 함수가 있다.</p>
+<p> </p><div class="next-note"><span>NEXT NOTE</span><a href="note-44.html">SQLmap →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

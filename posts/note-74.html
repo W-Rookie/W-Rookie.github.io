@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적 - 입력값을 통해 외부에서 직접적인 접근이 제한된 내부 서버 자원에 접근하여 악의적인 요청을 처리하거나 중요 정보의 유출 여부 점검- 입력값 검증을 통해 내부 서버 자원에 대한 비인가 접근을 차단하여 중요 정보(개인정보, 금융 정보 등) 탈취, 데이터…"><meta name="theme-color" content="#08090b"><title>SSRF 서버사이드 요청 위조 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 12<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-29">2026.03.29</time><span>2 MIN READ</span></div><h1>SSRF 서버사이드 요청 위조</h1><p>점검 목적 - 입력값을 통해 외부에서 직접적인 접근이 제한된 내부 서버 자원에 접근하여 악의적인 요청을 처리하거나 중요 정보의 유출 여부 점검- 입력값 검증을 통해 내부 서버 자원에 대한 비인가 접근을 차단하여 중요 정보(개인정보, 금융 정보 등) 탈취, 데이터…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p> </p>
+<p>- 입력값을 통해 외부에서 직접적인 접근이 제한된 내부 서버 자원에 접근하여 악의적인 요청을 처리하거나 중요 정보의 유출 여부 점검</p>
+<p>- 입력값 검증을 통해 내부 서버 자원에 대한 비인가 접근을 차단하여 중요 정보(개인정보, 금융 정보 등) 탈취, 데이터 변조, 임의 명령 실행 등 악의적인 행위를 방지하기 위함</p>
+<p> </p>
+<p> </p>
+<p>보안 위협</p>
+<p> </p>
+<p>- 서버 간 통신 시 입력값에 대한 검증이 미흡할 경우, 외부에서 접근이 제한된 내부 서버 자원에 대한 정보 수집, 중요 정보(개인정보, 금융 정보, 인사 정보 등) 탈취, 임의 명령 실행, 클라우드 환경 내 메타데이터 수집을 통한 네트워크 인프라 장악이 가능함</p>
+<p> </p>
+<p>판단 기준</p>
+<p> </p>
+<p>- <b>양호</b> : 외부 입력값이 화이트리스트 방식으로 검증되어, 허용된 URL 또는 IP 범위 내에서만 처리될 경우</p>
+<p>- <span style="color: #ee2323;"><b>취약</b></span> : 외부 입력값이 검증이 이루어지지 않고 처리되어 허용되지 않는 자원에 임의적인 접근 및 요청이 가능한 경우</p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>- 입력값 검증 및 화이트리스트를 적용하여 허용된 URL과 IP주소만 접근 가능하도록 설정하며, 네트워크를 분리하여 내부 자원에 대한 비인가 접근을 차단</p>
+<p> </p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>Step 1) 사용자 입력을 통해 서버 간 통신이 이루어지는 지점에서 허용되지 않은 주소값을 입력하여 응답, 지연 시간 등을 분석해 취약점 가능성 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/74/image-01.png" loading="lazy" width="613" height="180" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/74/image-02.png" loading="lazy" width="613" height="213" alt="[ 입력값에 대한 내부 서버 응답값 노출 여부 확인 ]"></span><figcaption>[ 입력값에 대한 내부 서버 응답값 노출 여부 확인 ]</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>Step 2) 습득한 정보를 바탕으로 우회 기법, 포트 스캔, 내부 정보 탈취 등 익스플로잇 시도 및 영향 평가</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/74/image-03.png" loading="lazy" width="613" height="197" alt=""></span></figure>
+</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/74/image-04.png" loading="lazy" width="605" height="345" alt=""></span></figure>
+</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/74/image-05.png" loading="lazy" width="613" height="211" alt="심화 공격"></span><figcaption>심화 공격</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. 외부 요청에 대해 허용된 URL이나 IP주소를 화이트리스트로 정의하여 허용된 대상에만 접근이 가능하도록  <br>설정 <br>2. 내부 네트워크 대역 및 관리용 포트에 대한 요청을 감지하고 차단 <br>3. URL 접근에 실패할 경우 사용자에게 에러 정보나 응답값을 노출하지 않고, 일반적인 에러메시지 출력  <br>4. http, https 외의 다른 프로토콜 (FTP, SMB, SMTP 등)과 URL 스키마(file://, gopher://, data://, dict:// 등)에  <br>대한 접근을 차단해야 하며, 내부 호스트명이 외부에 노출되지 않도록 DNS 설정을 조정 <br>5. 애플리케이션 서버와 중요 내부 시스템간 네트워크 분리를 통하여 불필요한 통신을 제한하여 권한 없는 접근  <br>과 외부로부터의 직접적인 접근을 방지</p><div class="next-note"><span>NEXT NOTE</span><a href="note-73.html">CSRF 크로스사이트 요청 위조 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

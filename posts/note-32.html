@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="모의해킹에서 대상을 지정하면 가장 처음에 수행하게 되는 것이 바로 정보 수집이다. 수집될 정보는 크게 두 가지로 분류한다 1. 웹 애플리케이션을 서비스하기 위한 호스트 환경( OS, Web server, Web Framework etc..) 2. 웹 애플리케이션…"><meta name="theme-color" content="#08090b"><title>정보 수집 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 50<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-08">2025.12.08</time><span>2 MIN READ</span></div><h1>정보 수집</h1><p>모의해킹에서 대상을 지정하면 가장 처음에 수행하게 되는 것이 바로 정보 수집이다. 수집될 정보는 크게 두 가지로 분류한다 1. 웹 애플리케이션을 서비스하기 위한 호스트 환경( OS, Web server, Web Framework etc..) 2. 웹 애플리케이션…</p></header>
+    <div class="article-content tistory-content"><p>모의해킹에서 대상을 지정하면 가장 처음에 수행하게 되는 것이 바로 정보 수집이다.</p>
+<p> </p>
+<p>수집될 정보는 크게 두 가지로 분류한다</p>
+<p> </p>
+<p>1. 웹 애플리케이션을 서비스하기 위한 호스트 환경( OS, Web server, Web Framework etc..) </p>
+<p>2. 웹 애플리케이션 자체에 대한 정보 </p>
+<p> </p>
+<p>호스트 환경에 대한 정보 수집을 통해 관련된 알려진 취약점을 쉽게 찾아 공격에 활용하기 위함</p>
+<p> </p>
+<h4>배너를 통한 정보 수집</h4>
+<p> </p>
+<p>웹서버와 관련된 정보를 간단하게 확인할 수 있는 방법은 응답 메시지의 서버 헤더를 살펴보는 것 </p>
+<p> </p>
+<p>서버의 응답을 통해 정보를 수집하는 방법을</p>
+<p>- <span style="color: #ee2323;">배너 그래빙(banner grabbing)</span>이라 함</p>
+<p> </p>
+<p>헤더를 통해 (OS, 웹 서버 버전, PHP 버전 정보, OpenSSl 정보) 알 수 있습니다.</p>
+<p> </p>
+<p><span style="color: #ee2323;">&lt;불필요한 정보를 노출&gt;</span></p>
+<p>º X-powered-By</p>
+<p>º X-ASPNET-VERSION</p>
+<p> </p>
+<p>Tip! </p>
+<blockquote>서버의 응답을 통해 버전 정보를 수집할 수 있다.</blockquote>
+<p> </p>
+<p>확인하는 방법 2가지</p>
+<p> </p>
+<p>1. 개발자도구 - <span style="color: #ee2323;">Network</span>탭 (웹사이트에 접속하면 그때 전송된 요청 내역이 모두 표시됨)</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/32/image-01.png" loading="lazy" width="847" height="301" alt=""></span></figure>
+</p>
+<p> </p>
+<p>2. 버프스위트로 확인할 수 있다. (history 기능)</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/32/image-02.png" loading="lazy" width="685" height="672" alt="Repeater 기능을 씀"></span><figcaption>Repeater 기능을 씀</figcaption>
+</figure>
+</p>
+<p> </p>
+<p>기본 설치 파일을 통한 시스템 정보 수집</p>
+<p> </p>
+<p>종종 웹 애플리케이션을 운영하기 위한 웹 서버와 웹 프레임워크, 기타 구성 요소를 설치할 때 기본으로 설치되는 파일로 인해</p>
+<p>호스트 환경에 대한 정보가 노출되는 경우가 있음</p>
+<p> </p>
+<p>Ex) PHP로 개발된 경우 phpinfo.php라는 기본 설치 파일을 통해 PHP 환경 정보, 환경 변수, 호스트 관련 정보가 노출될 수 있음</p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/32/image-03.png" loading="lazy" width="602" height="326" alt="BWAPP"></span><figcaption>BWAPP</figcaption>
+</figure>
+</p>
+<p> </p>
+<p> </p></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

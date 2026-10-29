@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 내용 : 웹 애플리케이션 내 다양한 인젝션 공격(LDAP, 운영체제 명령 실행, SSI, XPATH, XML, SSTI 인젝션 등)에 대해 외부 입력값이 쿼리나 명령어로 삽입되어 비인가된 접근이나 코드 실행의 가능 유무 점검 점검 목적 : 비인가된 접근, 데…"><meta name="theme-color" content="#08090b"><title>코드 인젝션 (Code Injection) — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 25<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-25">2026.03.25</time><span>1 MIN READ</span></div><h1>코드 인젝션 (Code Injection)</h1><p>점검 내용 : 웹 애플리케이션 내 다양한 인젝션 공격(LDAP, 운영체제 명령 실행, SSI, XPATH, XML, SSTI 인젝션 등)에 대해 외부 입력값이 쿼리나 명령어로 삽입되어 비인가된 접근이나 코드 실행의 가능 유무 점검 점검 목적 : 비인가된 접근, 데…</p></header>
+    <div class="article-content tistory-content"><p>점검 내용 : 웹 애플리케이션 내 다양한 인젝션 공격<b><span style="color: #ee2323;">(LDAP, 운영체제 명령 실행, SSI, XPATH, XML, SSTI 인젝션 등)</span></b>에 대해 외부 입력값이 쿼리나 명령어로 삽입되어 비인가된 접근이나 코드 실행의 가능 유무 점검</p>
+<p> </p>
+<p>점검 목적 : 비인가된 접근, 데이터 유출, 시스템 변조, 악성 코드 실행 등의 위협을 차단하여, <b><span style="color: #ee2323;">데이터 보호와 시스템 안정성을 확보하기 위함 </span></b></p>
+<p> </p>
+<p>보안 위협 : 비인가된 데이터 접근으로 민감 정보가 탈취될 수 있음 </p>
+<p>시스템 명령어나 스크립트가 실행되어 서버 제어나 악성 코드 실행이 가능하고, 데이터 무결성이 훼손되어 정보의 신뢰성이 떨어지며, 서비스 거부 공격(DoS)으로 시스템 <b><span style="color: #ee2323;">가용성</span></b>이 저하될 수 있음</p>
+<p> </p>
+<p> </p>
+<p>주요 공격 대상 : 웹 애플리케이션 소스코드, 웹 방화벽</p>
+<p> </p>
+<p><b>&lt;판단 기준&gt;</b></p>
+<p>양호 : 임의의 입력값에 대하여 철저한 검증이 이루어져, 허용되지 않은 값이 필터링되고 허용된 값만 처리되는 경우</p>
+<p><b><span style="color: #ee2323;"> 취약</span></b> : 임의의 입력값에 대하여 <b><span style="color: #ee2323;">검증 없이 명령이 실행되는 경우</span></b></p>
+<p> </p>
+<p><b>&lt;조치 방법&gt;</b></p>
+<p>1. 화이트리스트 방식으로 쿼리를 허용된 값만 처리하고</p>
+<p>2. 특수 문자에 대해 입력값 검증</p><div class="next-note"><span>NEXT NOTE</span><a href="note-59.html">[민감한 데이터 노출] 보안 대책 →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

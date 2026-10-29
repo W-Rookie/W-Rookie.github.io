@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="점검 목적 - 사용자가 인증된 세션을 가진 상태에서 공격자가 의도한 위조 요청이 전송‧처리되지 않도록 하여 비정상적인 상태 변경을 방지하기 위함 - 공격자는 사용자가 로그인된 세션을 악용하여 인증정보 없이도 위조된 요청을 전송할 수 있음. 이로 인해 사용자의 의도…"><meta name="theme-color" content="#08090b"><title>CSRF 크로스사이트 요청 위조 — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 13<br>VULNERABILITY ASSESSMENT</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>VULNERABILITY ASSESSMENT</span><time datetime="2026-03-28">2026.03.28</time><span>2 MIN READ</span></div><h1>CSRF 크로스사이트 요청 위조</h1><p>점검 목적 - 사용자가 인증된 세션을 가진 상태에서 공격자가 의도한 위조 요청이 전송‧처리되지 않도록 하여 비정상적인 상태 변경을 방지하기 위함 - 공격자는 사용자가 로그인된 세션을 악용하여 인증정보 없이도 위조된 요청을 전송할 수 있음. 이로 인해 사용자의 의도…</p></header>
+    <div class="article-content tistory-content"><p>점검 목적</p>
+<p> </p>
+<p>- 사용자가 인증된 세션을 가진 상태에서 공격자가 의도한 위조 요청이 전송‧처리되지 않도록 하여  <br>비정상적인 상태 변경을 방지하기 위함</p>
+<p> </p>
+<p>- 공격자는 사용자가 로그인된 세션을 악용하여 인증정보 없이도 위조된 요청을 전송할 수 있음. 이로 인해 사용자의 의도와 무관하게 비밀번호 변경, 계좌 이체, 게시글 삭제, 개인정보 수정 등 권한 있는 사용자가 수행할 수 있는 행위가 공격자에 의해 실행될 수 있음</p>
+<p> </p>
+<p>CSRF란?</p>
+<p> </p>
+<p>- 사용자가 자신의 의지와 무관하게 공격자가 의도한 행위(수정, 삭제, 등록 등)를 특정 웹사이트에 요청하게 하는 공격 유형으로, 사용자의 인증된 세션을 악용하여 비인가된 행위 수행 가능</p>
+<p> </p>
+<p>판단 기준</p>
+<p> </p>
+<p>- <b>양호</b> : 중요한 요청(비밀번호 변경, 송금 등)에 대해 CSRF 방어 토큰이 적용되어 있으며, 토큰 검증이  <br>정상적으로 수행되는 경우</p>
+<p> </p>
+<p>- <span style="color: #ee2323;"><b>취약</b></span> : 중요한 요청에 대해 CSRF 토큰이 없거나, 토큰 검증을 수행하지 않아 인증된 사용자의 요청  <br>위조가 가능한 경우</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>- 중요한 요청에는 CSRF 방어 토큰을 포함하고, 서버 측에서 해당 토큰의 유효성을 검증하도록 설정하며, Referer/Origin 헤더 검증 및 SameSite 쿠키 옵션을 활용하여 불필요한 외부 도메인 요청이 차단되도록 구성</p>
+<p> </p>
+<p>점검 방법</p>
+<p> </p>
+<p>Step 1) 크로스사이트 스크립팅(XSS) 취약점 존재 여부 확인 후 데이터 수정 기능(게시글 등록, 비밀번호 변경 등)이 존재하는 요청(Request) 정보를 분석하여 임의의 명령을 수행하는 스크립트 삽입 후 해당 게시글을 타 사용자가 열람하였을 경우 타 사용자의 권한으로 해당 스크립트의 실행 유무 확인</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/73/image-01.png" loading="lazy" width="508" height="311" alt=""></span></figure>
+</p>
+<p> </p>
+<p> </p>
+<p>조치 방법</p>
+<p> </p>
+<p>1. 주요 변경 요청(비밀번호 변경, 송금, 개인정보 수정 등)에 대해 <b><span style="color: #ee2323;">CSRF 토큰을 발급</span></b>하고 요청 시 토큰을 반드시  <br>포함하도록 구현 <br>2. 서버 측에서 <span style="color: #ee2323;"><b>CSRF 토큰의 유효성을 검증</b></span>하여 토큰이 누락되거나 위조된 요청은 차단하도록 설정 <br>3. Referer 및 Origin 헤더 검증을 통해 외부 사이트에서 발생한 요청 차단 <br>4. SameSite 쿠키 옵션을 적용하여 외부 사이트에서 인증 쿠키가 자동 전송되지 않도록 설정 <br>5. HTTPS 환경에서 쿠키에 Secure, HttpOnly 속성을 적용하여 세션 탈취 및 악용 가능성 최소화</p>
+<p> </p>
+<blockquote> CSRF Token<br>- 서버에서 생성한 고유하고 예측 불가능한 값으로 각 사용자 세션 또는 요청마다 생성되며 생성된 Token은 클라이언트의 요청에 포함되어 서버로 전송되고 서버는 이를 검증하여 요청의 정상 여부 판단</blockquote>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/73/image-02.png" loading="lazy" width="536" height="106" alt=""></span></figure>
+<figure class="imageblock alignCenter"><span><img src="../assets/posts/73/image-03.png" loading="lazy" width="434" height="585" alt=""></span></figure>
+<figure class="imageblock alignCenter"><span><img src="../assets/posts/73/image-04.png" loading="lazy" width="430" height="102" alt=""></span></figure>
+</p>
+<p> </p><div class="next-note"><span>NEXT NOTE</span><a href="note-72.html">XSS (크로스사이트 스크립트) →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>

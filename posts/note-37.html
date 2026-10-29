@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="DirBuster- URL 목록 파일을 사용해 각 URL을 자동으로 입력해 보는 방식으로 웹 애플리케이션 구조를 파악함숨겨진 페이지를 찾을 수 있다.- 목록 파일을 사용해 정보를 찾는 기법을 브루트 포스 공격이라 칭함 주로 사용자의 패스워드를 찾는 기법임 DirB…"><meta name="theme-color" content="#08090b"><title>DirBuster — W-Rookie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><script src="../assets/theme-init.js"></script><link rel="stylesheet" href="../assets/styles.css"><script src="../assets/app.js" defer></script>
+</head>
+<body><div class="noise" aria-hidden="true"></div><div class="article-progress" aria-hidden="true"></div>
+  <header class="site-header"><a class="brand" href="../index.html"><span class="brand-mark"><i></i></span><span><strong>W-ROOKIE</strong><small>SECURITY LOG</small></span></a><button class="theme-toggle" type="button" aria-label="화이트 모드로 변경"><span class="theme-toggle-icon" aria-hidden="true">☀</span><span class="theme-toggle-label">LIGHT</span></button><button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span></button><nav class="main-nav"><a href="../index.html">HOME</a><a href="../index.html#projects">PROJECTS</a><a href="../index.html#ctf">CTF</a><a class="active" href="../index.html#notes">NOTES</a><a href="../index.html#about">ABOUT</a><a class="nav-github" href="https://github.com/W-Rookie" target="_blank" rel="noreferrer">GITHUB ↗</a></nav></header>
+  <main class="article-shell"><aside class="article-aside"><div class="article-aside-inner"><p>NOTE 47<br>WEB PENETRATION TESTING</p><a href="../index.html#notes">← 모든 기록</a></div></aside><article>
+    <header class="article-head"><div class="article-meta"><span>WEB PENETRATION TESTING</span><time datetime="2025-12-10">2025.12.10</time><span>1 MIN READ</span></div><h1>DirBuster</h1><p>DirBuster- URL 목록 파일을 사용해 각 URL을 자동으로 입력해 보는 방식으로 웹 애플리케이션 구조를 파악함숨겨진 페이지를 찾을 수 있다.- 목록 파일을 사용해 정보를 찾는 기법을 브루트 포스 공격이라 칭함 주로 사용자의 패스워드를 찾는 기법임 DirB…</p></header>
+    <div class="article-content tistory-content"><h4>DirBuster</h4>
+<p>- URL 목록 파일을 사용해 각 URL을 자동으로 입력해 보는 방식으로 웹 애플리케이션 구조를 파악함</p>
+<p>숨겨진 페이지를 찾을 수 있다.</p>
+<p>- 목록 파일을 사용해 정보를 찾는 기법을 <b><span style="color: #ee2323;">브루트 포스 공격</span></b>이라 칭함 주로 <b><span style="color: #ee2323;">사용자의 패스워드를 찾는 기법임</span></b></p>
+<p> </p>
+<p><span style="color: #ee2323;">DirBuster로 실습</span></p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/37/image-01.png" loading="lazy" width="646" height="160" alt=""></span></figure>
+</p>
+<p> </p>
+<p>명령어로 dirbuster기능을 실행하고</p>
+<p> </p>
+<p>/usr/share/disbuster/wordlists 경로를 선택해 directory-list-1.0.txt 파일을 선택</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/37/image-02.png" loading="lazy" width="761" height="540" alt=""></span></figure>
+</p>
+<p> </p>
+<p><b>Start</b> 버튼을 누르게 되면</p>
+<p> </p>
+<p><figure class="imageblock alignCenter"><span><img src="../assets/posts/37/image-03.png" loading="lazy" width="1351" height="803" alt=""></span></figure>
+</p>
+<p> </p>
+<p>웹 애플리케이션 매핑으로 활용되며 찾은 URL정보를 직접 접속해 보면서 수동 매핑과 크롤링을 추가로 연계해 나갈 수 있다.</p>
+<p> </p>
+<blockquote>TIP<br>- 웹 애플리케이션을 매핑을 위해 DirBuster, 수동 매핑, 스파이더 기능을 같이 활용할 수 있다.</blockquote><div class="next-note"><span>NEXT NOTE</span><a href="note-34.html">디렉터리 인덱싱 [directory indexing] →</a></div></div>
+  </article></main><footer class="site-footer"><p>© 2026 W-ROOKIE.</p><a href="#">BACK TO TOP ↑</a></footer>
+</body></html>
