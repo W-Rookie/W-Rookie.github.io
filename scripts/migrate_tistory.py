@@ -347,6 +347,12 @@ def notes_section(posts: list[Post]) -> str:
         </label>
       </div>
 
+      <aside class="category-reference reveal" id="vulnerability-reference" aria-label="취약점 진단 참고 자료">
+        <div><span>KISA REFERENCE</span><strong>주요정보통신기반시설 취약점 진단 기준 참고</strong></div>
+        <p>취약점 진단 기록은 한국인터넷진흥원(KISA)의 「주요정보통신기반시설 기술적 취약점 분석·평가 방법 상세가이드」를 참고해 점검 목적·판단 기준·조치 방법 중심으로 정리했습니다.</p>
+        <a href="https://www.kisa.or.kr/" target="_blank" rel="noreferrer">KISA ↗</a>
+      </aside>
+
       <div class="post-grid" id="post-grid">
 {cards}
       </div>

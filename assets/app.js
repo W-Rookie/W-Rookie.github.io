@@ -64,6 +64,7 @@ const filters = [...document.querySelectorAll('.filter')];
 const cards = [...document.querySelectorAll('.post-card')];
 const search = document.querySelector('#post-search');
 const emptyState = document.querySelector('#empty-state');
+const vulnerabilityReference = document.querySelector('#vulnerability-reference');
 let activeFilter = 'all';
 
 function updatePosts() {
@@ -80,6 +81,7 @@ function updatePosts() {
   });
 
   if (emptyState) emptyState.hidden = visibleCount !== 0;
+  if (vulnerabilityReference) vulnerabilityReference.hidden = activeFilter === 'web-penetration-testing';
 }
 
 filters.forEach((button) => button.addEventListener('click', () => {
