@@ -1,5 +1,13 @@
 [
   {
+    "id": "rookies-sqli-payloads",
+    "title": "SQL Injection 상황별 점검 페이로드",
+    "date": "2026-11-08",
+    "category": "Rookies_PENETRATION TESTING",
+    "private": true,
+    "file": "posts/rookies-sqli-payloads.html"
+  },
+  {
     "id": "rookies-sqli",
     "title": "SQL Injection 실전 점검 노트",
     "date": "2026-11-08",

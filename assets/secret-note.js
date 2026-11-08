@@ -3,6 +3,7 @@ const secretGate = document.querySelector('#secret-gate');
 const secretContent = document.querySelector('#secret-content');
 const secretStatus = document.querySelector('#secret-status');
 const secretPassword = document.querySelector('#secret-password');
+const encryptedArticleUrl = secretForm?.dataset.payload || '../assets/rookies-sqli.enc.json';
 
 function base64ToBytes(value) {
   const decoded = atob(value);
@@ -10,7 +11,7 @@ function base64ToBytes(value) {
 }
 
 async function unlockArticle(password) {
-  const response = await fetch('../assets/rookies-sqli.enc.json', { cache: 'no-store' });
+  const response = await fetch(encryptedArticleUrl, { cache: 'no-store' });
   if (!response.ok) throw new Error('unavailable');
   const payload = await response.json();
   if (payload.version !== 1 || payload.kdf !== 'PBKDF2-SHA256' || payload.cipher !== 'AES-256-GCM') throw new Error('format');
