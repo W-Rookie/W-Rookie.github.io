@@ -81,7 +81,7 @@ function updatePosts() {
   });
 
   if (emptyState) emptyState.hidden = visibleCount !== 0;
-  if (vulnerabilityReference) vulnerabilityReference.hidden = activeFilter === 'web-penetration-testing';
+  if (vulnerabilityReference) vulnerabilityReference.hidden = activeFilter !== 'all' && activeFilter !== 'vulnerability-assessment';
 }
 
 filters.forEach((button) => button.addEventListener('click', () => {

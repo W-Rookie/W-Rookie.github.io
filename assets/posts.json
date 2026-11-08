@@ -1,5 +1,13 @@
 [
   {
+    "id": "rookies-sqli",
+    "title": "SQL Injection 실전 점검 노트",
+    "date": "2026-11-08",
+    "category": "Rookies_PENETRATION TESTING",
+    "private": true,
+    "file": "posts/rookies-sqli.html"
+  },
+  {
     "id": 85,
     "title": "불필요한 Method 악용",
     "date": "2026-03-31",
