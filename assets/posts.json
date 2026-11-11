@@ -1,5 +1,21 @@
 [
   {
+    "id": "rookies-xss-payloads",
+    "title": "XSS 상황별 점검 페이로드",
+    "date": "2026-11-11",
+    "category": "Rookies_PENETRATION TESTING",
+    "private": true,
+    "file": "posts/rookies-xss-payloads.html"
+  },
+  {
+    "id": "rookies-xss",
+    "title": "XSS 실전 점검 노트",
+    "date": "2026-11-11",
+    "category": "Rookies_PENETRATION TESTING",
+    "private": true,
+    "file": "posts/rookies-xss.html"
+  },
+  {
     "id": "rookies-sqli-payloads",
     "title": "SQL Injection 상황별 점검 페이로드",
     "date": "2026-11-08",
