@@ -34,7 +34,13 @@ secretForm?.addEventListener('submit', async (event) => {
   button.disabled = true;
   secretStatus.textContent = '본문을 여는 중입니다…';
   try {
-    const html = await unlockArticle(password);
+    let html = await unlockArticle(password);
+    const section = secretForm.dataset.section;
+    if (section) {
+      const bundle = JSON.parse(html);
+      html = bundle[section];
+      if (typeof html !== 'string') throw new Error('format');
+    }
     secretContent.innerHTML = html;
     secretContent.hidden = false;
     secretGate.hidden = true;
