@@ -61,13 +61,14 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
 
 const filters = [...document.querySelectorAll('.filter')];
-const cards = [...document.querySelectorAll('.post-card')];
 const search = document.querySelector('#post-search');
 const emptyState = document.querySelector('#empty-state');
 const vulnerabilityReference = document.querySelector('#vulnerability-reference');
+const rookiesGate = document.querySelector('#rookies-gate');
 let activeFilter = 'all';
 
 function updatePosts() {
+  const cards = [...document.querySelectorAll('.post-card')];
   if (!cards.length) return;
   const query = (search?.value || '').trim().toLocaleLowerCase('ko');
   let visibleCount = 0;
@@ -82,6 +83,7 @@ function updatePosts() {
 
   if (emptyState) emptyState.hidden = visibleCount !== 0;
   if (vulnerabilityReference) vulnerabilityReference.hidden = activeFilter !== 'all' && activeFilter !== 'vulnerability-assessment';
+  if (rookiesGate) rookiesGate.hidden = activeFilter !== 'rookies-penetration-testing' || rookiesGate.dataset.unlocked === 'true';
 }
 
 filters.forEach((button) => button.addEventListener('click', () => {
@@ -92,6 +94,7 @@ filters.forEach((button) => button.addEventListener('click', () => {
 }));
 
 search?.addEventListener('input', updatePosts);
+document.addEventListener('rookies:unlocked', updatePosts);
 document.addEventListener('keydown', (event) => {
   if (event.key === '/' && search && document.activeElement !== search) {
     event.preventDefault();

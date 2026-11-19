@@ -35,13 +35,31 @@ secretForm?.addEventListener('submit', async (event) => {
   secretStatus.textContent = '본문을 여는 중입니다…';
   try {
     let html = await unlockArticle(password);
+    let vaultEntry;
+    const vaultSection = secretForm.dataset.vaultSection;
     const section = secretForm.dataset.section;
-    if (section) {
+    if (vaultSection) {
+      const vault = JSON.parse(html);
+      vaultEntry = vault.entries?.find(entry => entry.file === `posts/${vaultSection}.html`);
+      html = vault.articles?.[vaultSection];
+      if (!vaultEntry || typeof vaultEntry.title !== 'string' || typeof vaultEntry.summary !== 'string' || typeof html !== 'string') throw new Error('format');
+    } else if (section) {
       const bundle = JSON.parse(html);
       html = bundle[section];
       if (typeof html !== 'string') throw new Error('format');
     }
     secretContent.innerHTML = html;
+    if (vaultEntry) {
+      document.title = `${vaultEntry.title} — W-Rookie`;
+      document.querySelector('meta[name="description"]')?.setAttribute('content', vaultEntry.summary);
+      document.querySelector('.article-head h1').textContent = vaultEntry.title;
+      document.querySelector('.article-head > p').textContent = vaultEntry.summary;
+      const meta = document.querySelector('.article-meta');
+      const time = document.createElement('time');
+      time.dateTime = vaultEntry.date;
+      time.textContent = vaultEntry.date.replaceAll('-', '.');
+      meta.insertBefore(time, meta.lastElementChild);
+    }
     secretContent.hidden = false;
     secretGate.hidden = true;
     secretPassword.value = '';
