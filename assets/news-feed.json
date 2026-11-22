@@ -1,0 +1,185 @@
+{
+  "generated_at": "2026-11-22T06:40:16.482608Z",
+  "articles": [
+    {
+      "source": "dailysecu",
+      "title": "CJ대한통운, 오네 챗봇 비정상 대량 접근 확인…개인정보 유출 가능성 조사",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209656",
+      "published": "2026-11-22T06:32:49Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[단독] 포항공대 해킹 피해 확대…개인정보 2만5,551건 추가 유출, 총 4만5,529건",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209655",
+      "published": "2026-11-22T06:13:04Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[보안 설문] 보안담당자 82.1% “AI 취약점 탐색·공격 자동화 가장 우려”…생성형 AI 관리도 과제",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209654",
+      "published": "2026-11-22T05:25:45Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[데일리시큐 웨비나] 김도원 KISA 팀장 \"공격자는 AI로 동시다발 침투…기업은 계정·권한 통제부터 점검해야\"",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209652",
+      "published": "2026-11-22T04:31:18Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "경기도교육청, 2023년 27만명 성적정보 유출로 과태료…3년 만에 교원 개인정보 또 유출",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209649",
+      "published": "2026-11-21T14:22:04Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[전자금융감독규정 일부 개정안] 금융위, 대형 금융사 보안점검 ‘반기 1회’로…업무지원 시스템도 살핀다",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209648",
+      "published": "2026-11-21T08:26:25Z"
+    },
+    {
+      "source": "boannews",
+      "title": "미 FBI 범죄정보망 ‘NCIC’ 해킹 정황... “수배·영장 정보 변조 우려”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147427",
+      "published": "2026-11-21T06:15:48Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "블랙다이아몬드 코리아, 외주 ERP 서버 침해사고…고객 개인정보 유출 가능성 공지",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209647",
+      "published": "2026-11-21T05:06:14Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[단독] 랜섬웨어 조직 에베레스트, 에이비엘바이오 해킹 주장…실제 유출 여부 조사해야",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209646",
+      "published": "2026-11-21T02:52:56Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "LIG아큐버 해외 브랜드 ‘Accuver’, 랜섬웨어 조직 에베레스트 해킹 당한 기업 명단에 등장",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209645",
+      "published": "2026-11-21T01:43:51Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "컬리 해킹으로 1만701명 개인정보 유출…일부 주민등록번호·계좌번호까지 탈취",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209644",
+      "published": "2026-11-20T21:35:43Z"
+    },
+    {
+      "source": "boannews",
+      "title": "컬리 개인정보 유출 사고, 큐레이터 1만699명·일반 고객 2명 피해",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147426",
+      "published": "2026-11-20T11:26:35Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[단독] 에이엠씨손해보험중개 보험금 청구 앱 해킹…주민번호·병명·치료정보 등 개인정보 유출",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209643",
+      "published": "2026-11-20T10:12:19Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "F5 BIG-IP, 인증 없는 원격 코드 실행 위험…APM·트래픽 처리 설정 점검 필요",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209642",
+      "published": "2026-11-20T09:16:43Z"
+    },
+    {
+      "source": "boannews",
+      "title": "급여·휴가 시스템 열흘 넘게 차질... EU 집행위원회, AI 해킹 도구 ‘아르텍스’ 공격 인정",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147398",
+      "published": "2026-11-20T08:00:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "‘PHP2셸’ 후속 ‘PHP애프터셸’ 등장... 상위 버전 재패치 필요",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147415",
+      "published": "2026-11-20T06:22:09Z"
+    },
+    {
+      "source": "boannews",
+      "title": "센스톤 ‘OTAC TAG’, 백악관·텍사스 추진 ‘수도 인프라 사이버 방어’ 프로젝트 합류",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147416",
+      "published": "2026-11-20T05:46:41Z"
+    },
+    {
+      "source": "boannews",
+      "title": "KISA, 민간과 협력해 악성문자 5억건·스팸 전화 1200만건 차단",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147411",
+      "published": "2026-11-20T05:00:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "“애플에 백도어 요구 명령, 비밀 아냐”... 영국 재판소, 정부 ‘함구 원칙’에 제동",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147399",
+      "published": "2026-11-20T05:00:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "JP모건체이스 협력업체 공격받아... 고객 이름·이메일 노출 가능성 공지",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147403",
+      "published": "2026-11-20T04:30:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "가상화 관리 콘솔 v센터에 최고 등급 인증 우회 결함... 브로드컴, 긴급 업데이트 권고",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147404",
+      "published": "2026-11-20T02:25:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "포항공대, 개인정보 유출... 대학 통합 계정·대학 소속 정보 등 2만여건 유출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147412",
+      "published": "2026-11-20T01:50:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "PHP 치명적 결함 패치...특정 웹서버 설정 시 코드 실행 가능",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147402",
+      "published": "2026-11-20T01:02:44Z"
+    },
+    {
+      "source": "boannews",
+      "title": "보이스루 ‘자메이크’, 비인가 접근으로 일부 회원정보 유출… 경로 차단·개별 통지",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147390",
+      "published": "2026-11-20T00:54:22Z"
+    },
+    {
+      "source": "kisa",
+      "title": "VMware 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72319",
+      "published": "2026-11-20"
+    },
+    {
+      "source": "kisa",
+      "title": "PHP 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72318",
+      "published": "2026-11-19"
+    },
+    {
+      "source": "kisa",
+      "title": "F5 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72316",
+      "published": "2026-11-19"
+    },
+    {
+      "source": "kisa",
+      "title": "Oracle 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72315",
+      "published": "2026-11-19"
+    },
+    {
+      "source": "kisa",
+      "title": "NGINX 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314",
+      "published": "2026-11-19"
+    },
+    {
+      "source": "kisa",
+      "title": "Oracle 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313",
+      "published": "2026-11-18"
+    }
+  ]
+}
