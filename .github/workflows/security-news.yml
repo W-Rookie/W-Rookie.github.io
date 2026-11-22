@@ -1,10 +1,11 @@
-name: Update security news
+name: Update dashboard data
 
 on:
   push:
     branches: [main]
     paths:
       - scripts/update_security_news.py
+      - scripts/update_github_activity.py
       - .github/workflows/security-news.yml
   schedule:
     - cron: '17 */4 * * *'
@@ -27,14 +28,16 @@ jobs:
           python-version: '3.12'
       - name: Collect RSS headlines
         run: python scripts/update_security_news.py
-      - name: Publish changed feed
+      - name: Collect GitHub contribution calendar
+        run: python scripts/update_github_activity.py
+      - name: Publish changed dashboard data
         run: |
-          if git diff --quiet -- assets/news-feed.json; then
-            echo "News feed unchanged"
+          if git diff --quiet -- assets/news-feed.json assets/github-activity.json; then
+            echo "Dashboard data unchanged"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/news-feed.json
-          git commit -m "Refresh security news headlines"
+          git add assets/news-feed.json assets/github-activity.json
+          git commit -m "Refresh dashboard data"
           git push
