@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-11-22T07:09:13.956096Z",
+  "generated_at": "2026-11-22T16:18:57.271012Z",
   "articles": [
+    {
+      "source": "dailysecu",
+      "title": "[단독 후속] 데일리시큐 19일 최초 보도한 한국전력 해킹, 152만 명 개인정보 유출로 확인…다크웹 게시물과 DB 유통 가능성 조사해야",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209657",
+      "published": "2026-11-22T13:26:26Z"
+    },
+    {
+      "source": "boannews",
+      "title": "한전, ‘한전ON’·조달망 뚫려 개인정보 152만여건 유출... 주민번호·카드번호까지 털려",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147429",
+      "published": "2026-11-22T10:57:10Z"
+    },
     {
       "source": "boannews",
       "title": "블랙다이아몬드 코리아, 공급망 피해로 개인정보 유출 가능성 안내 “택배 사칭 주의”",
@@ -86,12 +98,6 @@
       "published": "2026-11-20T10:12:19Z"
     },
     {
-      "source": "dailysecu",
-      "title": "F5 BIG-IP, 인증 없는 원격 코드 실행 위험…APM·트래픽 처리 설정 점검 필요",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209642",
-      "published": "2026-11-20T09:16:43Z"
-    },
-    {
       "source": "boannews",
       "title": "급여·휴가 시스템 열흘 넘게 차질... EU 집행위원회, AI 해킹 도구 ‘아르텍스’ 공격 인정",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147398",
@@ -138,12 +144,6 @@
       "title": "포항공대, 개인정보 유출... 대학 통합 계정·대학 소속 정보 등 2만여건 유출",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147412",
       "published": "2026-11-20T01:50:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "PHP 치명적 결함 패치...특정 웹서버 설정 시 코드 실행 가능",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147402",
-      "published": "2026-11-20T01:02:44Z"
     },
     {
       "source": "kisa",
