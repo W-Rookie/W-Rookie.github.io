@@ -1,6 +1,24 @@
 {
-  "generated_at": "2026-11-22T16:18:57.271012Z",
+  "generated_at": "2026-11-23T00:56:08.514717Z",
   "articles": [
+    {
+      "source": "boannews",
+      "title": "이스트시큐리티, 앤트로픽 사이버 검증 프로그램 ‘CVP’ 합류",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147431",
+      "published": "2026-11-23T00:17:35Z"
+    },
+    {
+      "source": "kisa",
+      "title": "Ascensio System 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72321",
+      "published": "2026-11-23"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[관세청 피싱사이트 분석] ‘마약 사건’ 문서로 피싱...정부 로고·사건번호 내걸고 재산 입증 요구",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209651",
+      "published": "2026-11-22T23:00:00Z"
+    },
     {
       "source": "dailysecu",
       "title": "[단독 후속] 데일리시큐 19일 최초 보도한 한국전력 해킹, 152만 명 개인정보 유출로 확인…다크웹 게시물과 DB 유통 가능성 조사해야",
@@ -92,12 +110,6 @@
       "published": "2026-11-20T11:26:35Z"
     },
     {
-      "source": "dailysecu",
-      "title": "[단독] 에이엠씨손해보험중개 보험금 청구 앱 해킹…주민번호·병명·치료정보 등 개인정보 유출",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209643",
-      "published": "2026-11-20T10:12:19Z"
-    },
-    {
       "source": "boannews",
       "title": "급여·휴가 시스템 열흘 넘게 차질... EU 집행위원회, AI 해킹 도구 ‘아르텍스’ 공격 인정",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147398",
@@ -140,12 +152,6 @@
       "published": "2026-11-20T02:25:00Z"
     },
     {
-      "source": "boannews",
-      "title": "포항공대, 개인정보 유출... 대학 통합 계정·대학 소속 정보 등 2만여건 유출",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147412",
-      "published": "2026-11-20T01:50:00Z"
-    },
-    {
       "source": "kisa",
       "title": "VMware 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72319",
@@ -174,12 +180,6 @@
       "title": "NGINX 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314",
       "published": "2026-11-19"
-    },
-    {
-      "source": "kisa",
-      "title": "Oracle 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313",
-      "published": "2026-11-18"
     }
   ]
 }
