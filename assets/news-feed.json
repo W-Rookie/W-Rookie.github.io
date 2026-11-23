@@ -1,11 +1,143 @@
 {
-  "generated_at": "2026-11-23T00:56:08.514717Z",
+  "generated_at": "2026-11-23T14:43:12.916148Z",
   "articles": [
     {
       "source": "boannews",
-      "title": "이스트시큐리티, 앤트로픽 사이버 검증 프로그램 ‘CVP’ 합류",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147431",
-      "published": "2026-11-23T00:17:35Z"
+      "title": "정독도서관 개인정보 유출... 기프티콘 수령자 636명 이름·번호",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147470",
+      "published": "2026-11-23T09:40:55Z"
+    },
+    {
+      "source": "boannews",
+      "title": "중국 연계 해커 AI 에이전트, 제로데이 찾아 대학 서버 장악",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147430",
+      "published": "2026-11-23T09:05:00Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[단독 후속2] 개인정보위, 한전 152만 명 개인정보 유출 조사 착수…한국전력 \"19일 해커로부터 협박 이메일 수신\" 인정",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209678",
+      "published": "2026-11-23T08:45:01Z"
+    },
+    {
+      "source": "boannews",
+      "title": "개인정보위, 한전 유출 조사 착수 ‘초동대응반’ 현장점검",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147461",
+      "published": "2026-11-23T07:26:27Z"
+    },
+    {
+      "source": "boannews",
+      "title": "데이터독 “클라우드 워크로드 심각 취약점 9개월 만에 4배 증가”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147460",
+      "published": "2026-11-23T07:17:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "ARTEX 속여 공격 방어... 리니어리티, AI 에이전트 공격 탐지 특화 허니팟 ‘FLOWIRE Trap’ 출시",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147459",
+      "published": "2026-11-23T07:08:18Z"
+    },
+    {
+      "source": "boannews",
+      "title": "국정원장 후보에 강금실 전 장관 지명... “국제공조로 사이버 위협 풀어나갈 인물”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147458",
+      "published": "2026-11-23T07:02:16Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "이스트시큐리티, 앤트로픽 CVP 합류...AI 활용해 사이버 방어력 높인다",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209674",
+      "published": "2026-11-23T06:52:53Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "KISIA, 랜섬웨어 위협 공동 대응 위한 제8차 민관학 협의체 개최",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209669",
+      "published": "2026-11-23T05:53:32Z"
+    },
+    {
+      "source": "boannews",
+      "title": "KISIA, 1587개 중소기업에 랜섬웨어 대응 솔루션 무상 제공",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147454",
+      "published": "2026-11-23T05:28:19Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "아마존 \"중국 해커, AI 해킹 도구 활용 공격 사례 공개\"...대학 서버 최고 관리자 권한까지 탈취",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209667",
+      "published": "2026-11-23T05:12:17Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "클라우드 워크로드 심각 취약점 9개월 만에 4배 급증",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209665",
+      "published": "2026-11-23T04:36:12Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "시놀로지 NAS 노리는 랜섬웨어 위협…인터넷 노출된 구형 장비 보안 점검 필요",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209664",
+      "published": "2026-11-23T04:25:44Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "VMware vCenter 치명적 제로데이 취약점, 중국 연계 해커조직 실제 공격 악용",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209663",
+      "published": "2026-11-23T04:11:44Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "CONCERT, 12월 3일 제30회 해킹방지워크샵 개최",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209662",
+      "published": "2026-11-23T03:59:16Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "LG유플러스, 협력사 160곳 보안 취약점 점검…일부 개선 착수",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209661",
+      "published": "2026-11-23T03:50:43Z"
+    },
+    {
+      "source": "boannews",
+      "title": "예별손보 고객 66명 개인정보 유출... 수탁업체 해킹에 피해 확산",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147448",
+      "published": "2026-11-23T03:05:52Z"
+    },
+    {
+      "source": "boannews",
+      "title": "LG유플러스, 협력사 160 곳 취약점 점검... “공급망 보안 강화”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147444",
+      "published": "2026-11-23T02:43:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "삼성증권 고객 개인정보 8241건 유출... ‘고객의소리’ 서비스 노린 해킹",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147441",
+      "published": "2026-11-23T01:57:57Z"
+    },
+    {
+      "source": "boannews",
+      "title": "해킹도 필요 없어... 그록으로 만든 앱 3만5000여개 무방비 노출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147205",
+      "published": "2026-11-23T01:54:39Z"
+    },
+    {
+      "source": "boannews",
+      "title": "포럼 가입 기록 하나가 단서... 랜섬웨어 ‘킬린’ 운영자로 러시아 36세 남성 지목",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147200",
+      "published": "2026-11-23T01:44:50Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "삼성증권, 고객 8,241명 개인정보 유출…VOC 첨부파일 외부 유출 확인",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209660",
+      "published": "2026-11-23T01:27:27Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[이슈] 랜섬웨어 조직 '하이플록' \"삼성그룹, 1TB 탈취·내부 시스템 암호화\" 주장...최근 반복적으로 보안이슈 발생하는 삼성",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209659",
+      "published": "2026-11-23T01:20:12Z"
     },
     {
       "source": "kisa",
@@ -18,138 +150,6 @@
       "title": "[관세청 피싱사이트 분석] ‘마약 사건’ 문서로 피싱...정부 로고·사건번호 내걸고 재산 입증 요구",
       "url": "https://www.dailysecu.com/news/articleView.html?idxno=209651",
       "published": "2026-11-22T23:00:00Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[단독 후속] 데일리시큐 19일 최초 보도한 한국전력 해킹, 152만 명 개인정보 유출로 확인…다크웹 게시물과 DB 유통 가능성 조사해야",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209657",
-      "published": "2026-11-22T13:26:26Z"
-    },
-    {
-      "source": "boannews",
-      "title": "한전, ‘한전ON’·조달망 뚫려 개인정보 152만여건 유출... 주민번호·카드번호까지 털려",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147429",
-      "published": "2026-11-22T10:57:10Z"
-    },
-    {
-      "source": "boannews",
-      "title": "블랙다이아몬드 코리아, 공급망 피해로 개인정보 유출 가능성 안내 “택배 사칭 주의”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147428",
-      "published": "2026-11-22T06:55:12Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "CJ대한통운, 오네 챗봇 비정상 대량 접근 확인…개인정보 유출 가능성 조사",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209656",
-      "published": "2026-11-22T06:32:49Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[단독] 포항공대 해킹 피해 확대…개인정보 2만5,551건 추가 유출, 총 4만5,529건",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209655",
-      "published": "2026-11-22T06:13:04Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[보안 설문] 보안담당자 82.1% “AI 취약점 탐색·공격 자동화 가장 우려”…생성형 AI 관리도 과제",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209654",
-      "published": "2026-11-22T05:25:45Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[데일리시큐 웨비나] 김도원 KISA 팀장 \"공격자는 AI로 동시다발 침투…기업은 계정·권한 통제부터 점검해야\"",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209652",
-      "published": "2026-11-22T04:31:18Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "경기도교육청, 2023년 27만명 성적정보 유출로 과태료…3년 만에 교원 개인정보 또 유출",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209649",
-      "published": "2026-11-21T14:22:04Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[전자금융감독규정 일부 개정안] 금융위, 대형 금융사 보안점검 ‘반기 1회’로…업무지원 시스템도 살핀다",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209648",
-      "published": "2026-11-21T08:26:25Z"
-    },
-    {
-      "source": "boannews",
-      "title": "미 FBI 범죄정보망 ‘NCIC’ 해킹 정황... “수배·영장 정보 변조 우려”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147427",
-      "published": "2026-11-21T06:15:48Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "블랙다이아몬드 코리아, 외주 ERP 서버 침해사고…고객 개인정보 유출 가능성 공지",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209647",
-      "published": "2026-11-21T05:06:14Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[단독] 랜섬웨어 조직 에베레스트, 에이비엘바이오 해킹 주장…실제 유출 여부 조사해야",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209646",
-      "published": "2026-11-21T02:52:56Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "LIG아큐버 해외 브랜드 ‘Accuver’, 랜섬웨어 조직 에베레스트 해킹 당한 기업 명단에 등장",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209645",
-      "published": "2026-11-21T01:43:51Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "컬리 해킹으로 1만701명 개인정보 유출…일부 주민등록번호·계좌번호까지 탈취",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209644",
-      "published": "2026-11-20T21:35:43Z"
-    },
-    {
-      "source": "boannews",
-      "title": "컬리 개인정보 유출 사고, 큐레이터 1만699명·일반 고객 2명 피해",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147426",
-      "published": "2026-11-20T11:26:35Z"
-    },
-    {
-      "source": "boannews",
-      "title": "급여·휴가 시스템 열흘 넘게 차질... EU 집행위원회, AI 해킹 도구 ‘아르텍스’ 공격 인정",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147398",
-      "published": "2026-11-20T08:00:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "‘PHP2셸’ 후속 ‘PHP애프터셸’ 등장... 상위 버전 재패치 필요",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147415",
-      "published": "2026-11-20T06:22:09Z"
-    },
-    {
-      "source": "boannews",
-      "title": "센스톤 ‘OTAC TAG’, 백악관·텍사스 추진 ‘수도 인프라 사이버 방어’ 프로젝트 합류",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147416",
-      "published": "2026-11-20T05:46:41Z"
-    },
-    {
-      "source": "boannews",
-      "title": "KISA, 민간과 협력해 악성문자 5억건·스팸 전화 1200만건 차단",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147411",
-      "published": "2026-11-20T05:00:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "“애플에 백도어 요구 명령, 비밀 아냐”... 영국 재판소, 정부 ‘함구 원칙’에 제동",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147399",
-      "published": "2026-11-20T05:00:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "JP모건체이스 협력업체 공격받아... 고객 이름·이메일 노출 가능성 공지",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147403",
-      "published": "2026-11-20T04:30:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "가상화 관리 콘솔 v센터에 최고 등급 인증 우회 결함... 브로드컴, 긴급 업데이트 권고",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147404",
-      "published": "2026-11-20T02:25:00Z"
     },
     {
       "source": "kisa",
