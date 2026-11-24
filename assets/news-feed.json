@@ -1,6 +1,48 @@
 {
-  "generated_at": "2026-11-24T02:54:55.470461Z",
+  "generated_at": "2026-11-24T14:54:21.441443Z",
   "articles": [
+    {
+      "source": "boannews",
+      "title": "[2026 보안 이슈 결산-2] 망분리 깬 AI 해킹 공격... 금융권, ‘자율·복원력’ 시동",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147449",
+      "published": "2026-11-24T08:30:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "포티넷 “10개월 만에 피해 규모 이미 작년 2.4배... 랜섬웨어 먹잇감 된 한국 기업”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147499",
+      "published": "2026-11-24T08:12:32Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[해커 단독 인터뷰-2] “학생정보 팔았다”…KrrK 팀원, 추가 해킹 주장 대학 사이트 공개",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209699",
+      "published": "2026-11-24T07:50:37Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "비자, 사이버·결제 위협 통합 탐지 플랫폼 'VTIP' 아태지역 출시",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209691",
+      "published": "2026-11-24T05:40:20Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "시큐리티스코어카드, 인증서 생성 도구 추적하는 지문 분석 기술 'GFMX' 개발",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209690",
+      "published": "2026-11-24T05:15:50Z"
+    },
+    {
+      "source": "boannews",
+      "title": "웰컴페이먼츠·KIS정보통신서도 개인정보 유출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147490",
+      "published": "2026-11-24T03:12:34Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "엔키화이트햇, 코스닥 상장 추진…“AI 공격형 보안 플랫폼으로 글로벌 도약”",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209684",
+      "published": "2026-11-24T03:00:39Z"
+    },
     {
       "source": "dailysecu",
       "title": "이강인 뛰는 스페인 라리가, 디지털 플랫폼 해킹…여러 구단 팬 개인정보 유출",
@@ -30,6 +72,24 @@
       "title": "‘rERP’ 해킹, 파장은?... 약한 고리 대학 노린 ‘산학연’ 전체 위기",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147469",
       "published": "2026-11-24T00:43:01Z"
+    },
+    {
+      "source": "kisa",
+      "title": "Splunk 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72326",
+      "published": "2026-11-24"
+    },
+    {
+      "source": "kisa",
+      "title": "ConnectWise 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72325",
+      "published": "2026-11-24"
+    },
+    {
+      "source": "kisa",
+      "title": "BeyondTrust 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72324",
+      "published": "2026-11-24"
     },
     {
       "source": "dailysecu",
@@ -68,82 +128,10 @@
       "published": "2026-11-23T07:26:27Z"
     },
     {
-      "source": "boannews",
-      "title": "데이터독 “클라우드 워크로드 심각 취약점 9개월 만에 4배 증가”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147460",
-      "published": "2026-11-23T07:17:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "ARTEX 속여 공격 방어... 리니어리티, AI 에이전트 공격 탐지 특화 허니팟 ‘FLOWIRE Trap’ 출시",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147459",
-      "published": "2026-11-23T07:08:18Z"
-    },
-    {
-      "source": "boannews",
-      "title": "국정원장 후보에 강금실 전 장관 지명... “국제공조로 사이버 위협 풀어나갈 인물”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147458",
-      "published": "2026-11-23T07:02:16Z"
-    },
-    {
       "source": "dailysecu",
       "title": "이스트시큐리티, 앤트로픽 CVP 합류...AI 활용해 사이버 방어력 높인다",
       "url": "https://www.dailysecu.com/news/articleView.html?idxno=209674",
       "published": "2026-11-23T06:52:53Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "KISIA, 랜섬웨어 위협 공동 대응 위한 제8차 민관학 협의체 개최",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209669",
-      "published": "2026-11-23T05:53:32Z"
-    },
-    {
-      "source": "boannews",
-      "title": "KISIA, 1587개 중소기업에 랜섬웨어 대응 솔루션 무상 제공",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147454",
-      "published": "2026-11-23T05:28:19Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "아마존 \"중국 해커, AI 해킹 도구 활용 공격 사례 공개\"...대학 서버 최고 관리자 권한까지 탈취",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209667",
-      "published": "2026-11-23T05:12:17Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "클라우드 워크로드 심각 취약점 9개월 만에 4배 급증",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209665",
-      "published": "2026-11-23T04:36:12Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "시놀로지 NAS 노리는 랜섬웨어 위협…인터넷 노출된 구형 장비 보안 점검 필요",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209664",
-      "published": "2026-11-23T04:25:44Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "VMware vCenter 치명적 제로데이 취약점, 중국 연계 해커조직 실제 공격 악용",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209663",
-      "published": "2026-11-23T04:11:44Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "CONCERT, 12월 3일 제30회 해킹방지워크샵 개최",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209662",
-      "published": "2026-11-23T03:59:16Z"
-    },
-    {
-      "source": "boannews",
-      "title": "예별손보 고객 66명 개인정보 유출... 수탁업체 해킹에 피해 확산",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147448",
-      "published": "2026-11-23T03:05:52Z"
-    },
-    {
-      "source": "boannews",
-      "title": "LG유플러스, 협력사 160 곳 취약점 점검... “공급망 보안 강화”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147444",
-      "published": "2026-11-23T02:43:00Z"
     },
     {
       "source": "kisa",
@@ -180,6 +168,12 @@
       "title": "NGINX 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314",
       "published": "2026-11-19"
+    },
+    {
+      "source": "kisa",
+      "title": "Oracle 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313",
+      "published": "2026-11-18"
     }
   ]
 }
