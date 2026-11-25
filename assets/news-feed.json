@@ -1,6 +1,36 @@
 {
-  "generated_at": "2026-11-24T14:54:21.441443Z",
+  "generated_at": "2026-11-25T00:47:03.105369Z",
   "articles": [
+    {
+      "source": "boannews",
+      "title": "양자보안 산학연 전문가 한자리에… 한국정보보호학회 양자보안워크숍 워크숍 개최",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147422",
+      "published": "2026-11-24T23:30:00Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "하나저축은행 해킹…고객 552명 주민등록번호 등 개인신용정보 유출 확인",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209707",
+      "published": "2026-11-24T18:05:15Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "국립순천대학교 해킹…구 향림통시스템 개인정보 유출 정황 확인",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209706",
+      "published": "2026-11-24T17:56:18Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[전문가 칼럼-11] API는 달라졌는데, 취약점은 왜 낯익을까 ①",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209705",
+      "published": "2026-11-24T17:07:35Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[이슈] 한전 해킹 뒤 ‘취약점 방치’ 제보 확인해보니…신고 건은 패치, 정부 취약점 신고제에 ‘패치 데드라인’ 도입 시급",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209704",
+      "published": "2026-11-24T16:39:49Z"
+    },
     {
       "source": "boannews",
       "title": "[2026 보안 이슈 결산-2] 망분리 깬 AI 해킹 공격... 금융권, ‘자율·복원력’ 시동",
@@ -116,24 +146,6 @@
       "published": "2026-11-23T09:05:00Z"
     },
     {
-      "source": "dailysecu",
-      "title": "[단독 후속2] 개인정보위, 한전 152만 명 개인정보 유출 조사 착수…한국전력 \"19일 해커로부터 협박 이메일 수신\" 인정",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209678",
-      "published": "2026-11-23T08:45:01Z"
-    },
-    {
-      "source": "boannews",
-      "title": "개인정보위, 한전 유출 조사 착수 ‘초동대응반’ 현장점검",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147461",
-      "published": "2026-11-23T07:26:27Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "이스트시큐리티, 앤트로픽 CVP 합류...AI 활용해 사이버 방어력 높인다",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209674",
-      "published": "2026-11-23T06:52:53Z"
-    },
-    {
       "source": "kisa",
       "title": "Ascensio System 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72321",
@@ -168,12 +180,6 @@
       "title": "NGINX 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314",
       "published": "2026-11-19"
-    },
-    {
-      "source": "kisa",
-      "title": "Oracle 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313",
-      "published": "2026-11-18"
     }
   ]
 }
