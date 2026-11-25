@@ -1,107 +1,161 @@
 {
-  "generated_at": "2026-11-25T00:47:03.105369Z",
+  "generated_at": "2026-11-25T14:26:46.519665Z",
   "articles": [
     {
       "source": "boannews",
-      "title": "양자보안 산학연 전문가 한자리에… 한국정보보호학회 양자보안워크숍 워크숍 개최",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147422",
-      "published": "2026-11-24T23:30:00Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "하나저축은행 해킹…고객 552명 주민등록번호 등 개인신용정보 유출 확인",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209707",
-      "published": "2026-11-24T18:05:15Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "국립순천대학교 해킹…구 향림통시스템 개인정보 유출 정황 확인",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209706",
-      "published": "2026-11-24T17:56:18Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[전문가 칼럼-11] API는 달라졌는데, 취약점은 왜 낯익을까 ①",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209705",
-      "published": "2026-11-24T17:07:35Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[이슈] 한전 해킹 뒤 ‘취약점 방치’ 제보 확인해보니…신고 건은 패치, 정부 취약점 신고제에 ‘패치 데드라인’ 도입 시급",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209704",
-      "published": "2026-11-24T16:39:49Z"
+      "title": "KAIST 사이버보안연구센터, AI 도박 탐지로 강원랜드 감사장",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147543",
+      "published": "2026-11-25T09:21:59Z"
     },
     {
       "source": "boannews",
-      "title": "[2026 보안 이슈 결산-2] 망분리 깬 AI 해킹 공격... 금융권, ‘자율·복원력’ 시동",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147449",
-      "published": "2026-11-24T08:30:00Z"
+      "title": "더존비즈온 해킹에 보안기업도 유출 피해 우려... 이스트시큐리티 유출 가능성",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147542",
+      "published": "2026-11-25T09:05:30Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "더존비즈온, 보안·법률 전문가 자문위 꾸려 정보보호 거버넌스 강화",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209747",
+      "published": "2026-11-25T08:51:28Z"
     },
     {
       "source": "boannews",
-      "title": "포티넷 “10개월 만에 피해 규모 이미 작년 2.4배... 랜섬웨어 먹잇감 된 한국 기업”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147499",
-      "published": "2026-11-24T08:12:32Z"
+      "title": "MMORPG ‘다크에덴’서 개인정보 유출... 홈페이지 취약점 악용 공격에 당했다",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147539",
+      "published": "2026-11-25T08:49:13Z"
     },
     {
       "source": "dailysecu",
-      "title": "[해커 단독 인터뷰-2] “학생정보 팔았다”…KrrK 팀원, 추가 해킹 주장 대학 사이트 공개",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209699",
-      "published": "2026-11-24T07:50:37Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "비자, 사이버·결제 위협 통합 탐지 플랫폼 'VTIP' 아태지역 출시",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209691",
-      "published": "2026-11-24T05:40:20Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "시큐리티스코어카드, 인증서 생성 도구 추적하는 지문 분석 기술 'GFMX' 개발",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209690",
-      "published": "2026-11-24T05:15:50Z"
+      "title": "아레스사이버전략연구소·더존비즈온·스틸리언, AI 위협 대응·사이버복원력 평가 협력",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209746",
+      "published": "2026-11-25T08:45:34Z"
     },
     {
       "source": "boannews",
-      "title": "웰컴페이먼츠·KIS정보통신서도 개인정보 유출",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147490",
-      "published": "2026-11-24T03:12:34Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "엔키화이트햇, 코스닥 상장 추진…“AI 공격형 보안 플랫폼으로 글로벌 도약”",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209684",
-      "published": "2026-11-24T03:00:39Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "이강인 뛰는 스페인 라리가, 디지털 플랫폼 해킹…여러 구단 팬 개인정보 유출",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209683",
-      "published": "2026-11-24T02:42:43Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "국내 PG사 잇단 해킹 사고…웰컴페이먼츠와 NHN KCP·KIS정보통신 등 개인정보 유출",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209682",
-      "published": "2026-11-24T02:28:38Z"
+      "title": "국립순천대 개인정보 유출 가능성... 개인정보 비인가 조회 정황도",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147538",
+      "published": "2026-11-25T08:32:02Z"
     },
     {
       "source": "boannews",
-      "title": "레드펜소프트 취약점 관리 플랫폼, 네트워크 장비 보안 점검 기능 추가",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147485",
-      "published": "2026-11-24T02:17:02Z"
+      "title": "한국생산성본부, 개인정보 유출 가능성... 자체 교육 사이트 ‘에듀테크센터’ 해킹 탓",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147537",
+      "published": "2026-11-25T08:26:17Z"
     },
     {
       "source": "boannews",
-      "title": "비자, 위협 인텔리전스 플랫폼 출시... 월 9000만건 공격 차단 역량 담아",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147474",
-      "published": "2026-11-24T01:03:11Z"
+      "title": "한국투자저축은행, 8만6433명 개인정보 유출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147536",
+      "published": "2026-11-25T08:13:25Z"
     },
     {
       "source": "boannews",
-      "title": "‘rERP’ 해킹, 파장은?... 약한 고리 대학 노린 ‘산학연’ 전체 위기",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147469",
-      "published": "2026-11-24T00:43:01Z"
+      "title": "한국보안인증 개최 보안 세미나 성료... 보안 전문가 모여 자유롭게 담론 제시",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147535",
+      "published": "2026-11-25T08:05:03Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "에버스핀, MTD 기반 에버세이프 웹으로 대학가 AI 자동화 공격 대응 점검",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209738",
+      "published": "2026-11-25T07:59:00Z"
+    },
+    {
+      "source": "boannews",
+      "title": "시큐아이, 취약 계층에 따뜻한 온기...김장김치 700kg 전달",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147534",
+      "published": "2026-11-25T07:44:05Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "한국정보통신(KICC) 해킹당해…가맹점 서버 비인가 접근으로 사업자·판매자 정보 유출",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209734",
+      "published": "2026-11-25T07:27:37Z"
+    },
+    {
+      "source": "boannews",
+      "title": "해킹 당한 더존비즈온, 보안 강화 ‘분골쇄신’... ‘보안 특별 자문위원회’ 출범",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147531",
+      "published": "2026-11-25T07:23:08Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "한국생산성본부 온라인 교육사이트 해킹…파일 업로드 취약점 악용, 개인정보 유출 가능성",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209732",
+      "published": "2026-11-25T07:12:42Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "포티넷코리아, 'AI 사이버보안 서밋 2026' 개최...AI 악용 공격 실태 공개",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209726",
+      "published": "2026-11-25T06:57:06Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "구글 크롬 치명적 취약점 수정…업데이트 후 실행 버전 확인해야",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209728",
+      "published": "2026-11-25T06:57:03Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "논문·과제 유사도 검사 서비스 터니틴 해킹…제출물 유출 여부 미공개",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209725",
+      "published": "2026-11-25T06:50:40Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[해외] 미국 우라늄 사업장, 사이버 공격에 가동 중단…공장·채굴 구역 제어 시스템 영향",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209724",
+      "published": "2026-11-25T06:48:12Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "[해외] 일본 숙박 예약 시스템 해킹…정보 노출 가능 범위 최대 100만 명으로 줄어",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209723",
+      "published": "2026-11-25T06:45:02Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "브로드컴, VMware 취약점 23건 수정…vCenter 인증 우회 ‘CVSS 9.8’",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209722",
+      "published": "2026-11-25T06:42:16Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "'충남 정보보호 혁신 컨퍼런스 2026', 내달 4일 아산서 개최",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209718",
+      "published": "2026-11-25T06:40:12Z"
+    },
+    {
+      "source": "boannews",
+      "title": "인트브릿지, AI MCP 서버 개인정보 유출 사전에 막는다",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147530",
+      "published": "2026-11-25T06:39:15Z"
+    },
+    {
+      "source": "boannews",
+      "title": "배재대, 같은 해커한테 두 번 당했다... 메일 계정 신청 정보 1만2050건 유출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147529",
+      "published": "2026-11-25T05:52:06Z"
+    },
+    {
+      "source": "boannews",
+      "title": "이름·이메일 유출 첫 확인... EU 집행위원회, 해킹당한 EU 아카데미 접속 차단",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147475",
+      "published": "2026-11-25T05:32:33Z"
+    },
+    {
+      "source": "kisa",
+      "title": "VMware 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72328",
+      "published": "2026-11-25"
+    },
+    {
+      "source": "kisa",
+      "title": "HPE 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72327",
+      "published": "2026-11-25"
     },
     {
       "source": "kisa",
@@ -122,64 +176,10 @@
       "published": "2026-11-24"
     },
     {
-      "source": "dailysecu",
-      "title": "HD현대로보틱스 해킹으로 개인정보 유출, 기업명·부서·직책 등 10개 항목",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209681",
-      "published": "2026-11-23T23:11:49Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "서울중앙지법 판결문 개인정보 유출…다른 법원은 안전한가",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209679",
-      "published": "2026-11-23T14:55:46Z"
-    },
-    {
-      "source": "boannews",
-      "title": "정독도서관 개인정보 유출... 기프티콘 수령자 636명 이름·번호",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147470",
-      "published": "2026-11-23T09:40:55Z"
-    },
-    {
-      "source": "boannews",
-      "title": "중국 연계 해커 AI 에이전트, 제로데이 찾아 대학 서버 장악",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147430",
-      "published": "2026-11-23T09:05:00Z"
-    },
-    {
       "source": "kisa",
       "title": "Ascensio System 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72321",
       "published": "2026-11-23"
-    },
-    {
-      "source": "kisa",
-      "title": "VMware 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72319",
-      "published": "2026-11-20"
-    },
-    {
-      "source": "kisa",
-      "title": "PHP 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72318",
-      "published": "2026-11-19"
-    },
-    {
-      "source": "kisa",
-      "title": "F5 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72316",
-      "published": "2026-11-19"
-    },
-    {
-      "source": "kisa",
-      "title": "Oracle 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72315",
-      "published": "2026-11-19"
-    },
-    {
-      "source": "kisa",
-      "title": "NGINX 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314",
-      "published": "2026-11-19"
     }
   ]
 }
