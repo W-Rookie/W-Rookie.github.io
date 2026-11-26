@@ -1,6 +1,12 @@
 {
-  "generated_at": "2026-11-25T14:26:46.519665Z",
+  "generated_at": "2026-11-26T00:23:18.733903Z",
   "articles": [
+    {
+      "source": "dailysecu",
+      "title": "한국투자저축은행, 해킹 대응 이틀 만에 또 뚫렸다…8만6,611명 개인정보 유출",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209748",
+      "published": "2026-11-25T22:30:33Z"
+    },
     {
       "source": "boannews",
       "title": "KAIST 사이버보안연구센터, AI 도박 탐지로 강원랜드 감사장",
@@ -120,12 +126,6 @@
       "title": "브로드컴, VMware 취약점 23건 수정…vCenter 인증 우회 ‘CVSS 9.8’",
       "url": "https://www.dailysecu.com/news/articleView.html?idxno=209722",
       "published": "2026-11-25T06:42:16Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "'충남 정보보호 혁신 컨퍼런스 2026', 내달 4일 아산서 개최",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209718",
-      "published": "2026-11-25T06:40:12Z"
     },
     {
       "source": "boannews",
