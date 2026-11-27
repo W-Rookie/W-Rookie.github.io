@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-11-26T13:56:14.267400Z",
+  "generated_at": "2026-11-27T00:37:25.142322Z",
   "articles": [
+    {
+      "source": "kisa",
+      "title": "Synology 제품 보안 업데이트 권고",
+      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72331",
+      "published": "2026-11-27"
+    },
+    {
+      "source": "dailysecu",
+      "title": "에어프레미아 고객상담 위탁업체 해킹…고객 개인정보·통화 녹음 유출 가능성",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209785",
+      "published": "2026-11-26T23:18:25Z"
+    },
     {
       "source": "dailysecu",
       "title": "[단독] 호텔스토리 또 해킹당해…10월 이어 11월도 2차 고객 개인정보 유출",
@@ -72,12 +84,6 @@
       "title": "가격 비교 플랫폼 ‘다나와’ 해킹 추정 사고... 서비스 일시 중단",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147585",
       "published": "2026-11-26T08:25:18Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[단독] 다우키움그룹 계열사 이머니 ‘엑스원’ 해킹 정황…고객 개인정보 유출, 환불 사칭 연락으로 정보유출 인지",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209765",
-      "published": "2026-11-26T08:17:02Z"
     },
     {
       "source": "boannews",
@@ -173,12 +179,6 @@
       "source": "kisa",
       "title": "Splunk 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72326",
-      "published": "2026-11-24"
-    },
-    {
-      "source": "kisa",
-      "title": "ConnectWise 제품 보안 업데이트 권고",
-      "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72325",
       "published": "2026-11-24"
     }
   ]
