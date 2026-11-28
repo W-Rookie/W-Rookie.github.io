@@ -1,6 +1,108 @@
 {
-  "generated_at": "2026-11-28T00:04:11.622835Z",
+  "generated_at": "2026-11-28T07:52:56.234144Z",
   "articles": [
+    {
+      "source": "boannews",
+      "title": "[더존비즈온 사태] 11월28일 현황... 서울시공익활동지원센터 유출 가능성",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147607",
+      "published": "2026-11-28T07:19:17Z"
+    },
+    {
+      "source": "boannews",
+      "title": "과기정통부, ISMS·ISMS-P 강화인증·심사 6명 이상 추진... 인증취소 기준도 구체화",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147606",
+      "published": "2026-11-28T06:45:35Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "대학 30여 곳 연쇄 해킹 여파…연구관리시스템 외부 접속 차단하고 2차 인증 도입 나선 대학들",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209822",
+      "published": "2026-11-28T06:12:51Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "글로벌 의료기기 기업 보스턴사이언티픽 개인정보 유출…의료산업 보안 위협 지속",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209820",
+      "published": "2026-11-28T04:38:27Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "네트워크 관리 솔루션 Cacti 제로데이 공개…패치 전 긴급 보안조치 필요",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209819",
+      "published": "2026-11-28T04:36:07Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "글로벌 ERP 기업 SAP 해킹 정황…소스코드 탈취·변조 의혹에 공급망 보안 우려",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209818",
+      "published": "2026-11-28T04:31:06Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "홍콩 공공 예약 플랫폼 해킹…옛 계정 약 9만 개 개인정보 영향권",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209817",
+      "published": "2026-11-28T04:02:25Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "미 콜로라도주 디지털 신분증 앱 침해…약 10만 명 자료 영향 추산",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209816",
+      "published": "2026-11-28T03:53:47Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "영국 노동연금부 사이버 사고…복지 온라인 서비스 중단, 정기 급여는 정상 지급",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209815",
+      "published": "2026-11-28T03:44:31Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "일본 마넥스증권 해킹…이메일 112만여 건·462명 신분증 이미지 유출",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209814",
+      "published": "2026-11-28T03:34:39Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "다른 사람의 로그인 상태를 가로챌 수 있었다…깃랩, 자체 구축판 보안 패치",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209813",
+      "published": "2026-11-28T02:45:08Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "지운 줄 알았던 고객정보가 위탁사에 남았다…일본 KARTE 해킹 피해 추가 확인",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209811",
+      "published": "2026-11-28T02:35:10Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "인터넷에 열린 방화벽 관리 화면이 공격 통로로…팔로알토네트웍스, PAN-OS 취약점 악용 확인",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209810",
+      "published": "2026-11-28T02:30:05Z"
+    },
+    {
+      "source": "dailysecu",
+      "title": "기업 웹사이트 관리하는 어도비 AEM 보안 패치",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209808",
+      "published": "2026-11-28T02:20:46Z"
+    },
+    {
+      "source": "boannews",
+      "title": "삼성증권 개인정보 유출, 8241명→1만2168명 확대",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147605",
+      "published": "2026-11-28T01:44:13Z"
+    },
+    {
+      "source": "boannews",
+      "title": "[신간] “사이버 레질리언스, 기업 업무 지속성 지키는 ‘경영 과제’”",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147604",
+      "published": "2026-11-28T01:24:56Z"
+    },
+    {
+      "source": "boannews",
+      "title": "인터넷우체국 해킹에 11만4000명 개인정보 유출",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147603",
+      "published": "2026-11-28T00:14:02Z"
+    },
     {
       "source": "boannews",
       "title": "검색해서 받은 파일이 미끼였다... ‘오캠’ 위장 설치 파일로 원격 조종 악성코드 심기 시도",
@@ -38,76 +140,10 @@
       "published": "2026-11-27T06:37:14Z"
     },
     {
-      "source": "dailysecu",
-      "title": "개인정보 유출 10개월간 1,019건…AI 해킹 확산에 개인정보위 긴급대응 체계 가동",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209794",
-      "published": "2026-11-27T06:10:49Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "국내 최대 규모 사이버위협 인텔리전스 컨퍼런스 ‘K-CTI 2027’, 4월 28일 코엑스서 개최",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209793",
-      "published": "2026-11-27T06:05:27Z"
-    },
-    {
       "source": "boannews",
       "title": "KISA, ‘2026 정보보호 해외 진출 전략 거점 성과 발표회’ 개최",
       "url": "https://www.boannews.com/news/articleView.html?idxno=147599",
       "published": "2026-11-27T05:42:49Z"
-    },
-    {
-      "source": "boannews",
-      "title": "새로 산 폰에 이미 들어 있었다... 펌웨어 악성코드 ‘키나두’, 10개월 새 22만 대 감염",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147595",
-      "published": "2026-11-27T04:50:00Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "수협은행도 고객 54명 개인정보 유출, 금융권 침해사고 잇따라",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209789",
-      "published": "2026-11-27T04:37:17Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "과학기술인공제회 해킹…회원정보 21만건 유출, 국가 연구인력 표적공격 우려",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209788",
-      "published": "2026-11-27T04:32:25Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "쿤텍-DNV, 산업 제어 시스템 기능안전과 사이버보안 연계 평가 협력",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209787",
-      "published": "2026-11-27T03:58:17Z"
-    },
-    {
-      "source": "boannews",
-      "title": "과학기술인공제회, 서버 보안 취약점 악용 해킹으로 회원 개인정보 유출",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147598",
-      "published": "2026-11-27T03:30:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "[이슈 칼럼] 쿠오 바디스, 사이버 보안",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147597",
-      "published": "2026-11-27T02:43:08Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[신간] 조영철 대표∙손기욱 교수∙강정민 교수∙이화영 대표 4인, '사이버 레질리언스' 출간",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209786",
-      "published": "2026-11-27T02:24:06Z"
-    },
-    {
-      "source": "boannews",
-      "title": "님로드 박스 빅ID CPO “공격자가 AI 속도로 움직인다면 방어자도 AI 속도로 움직여야”",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147569",
-      "published": "2026-11-27T01:25:00Z"
-    },
-    {
-      "source": "boannews",
-      "title": "수원대 정보보호학과, 한국융합보안학회 추계학술대회서 학회장상 3건 수상",
-      "url": "https://www.boannews.com/news/articleView.html?idxno=147594",
-      "published": "2026-11-27T00:43:37Z"
     },
     {
       "source": "kisa",
@@ -120,42 +156,6 @@
       "title": "Synology 제품 보안 업데이트 권고",
       "url": "https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72331",
       "published": "2026-11-27"
-    },
-    {
-      "source": "dailysecu",
-      "title": "에어프레미아 고객상담 위탁업체 해킹…고객 개인정보·통화 녹음 유출 가능성",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209785",
-      "published": "2026-11-26T23:18:25Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "[단독] 호텔스토리 또 해킹당해…10월 이어 11월도 2차 고객 개인정보 유출",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209782",
-      "published": "2026-11-26T13:23:50Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "CJ올리브영 해킹, 고객 개인정보 유출…업무시스템 비인가 접근 확인",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209781",
-      "published": "2026-11-26T12:58:00Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "알약 개발사 이스트시큐리티, 개인정보 유출 가능성 공지",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209780",
-      "published": "2026-11-26T10:06:50Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "정부, 개인정보 유출 위험 높은 ‘스크래핑’ 개선 나선다…2027년부터 API 기반 안전한 전송체계 전환",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209779",
-      "published": "2026-11-26T09:51:48Z"
-    },
-    {
-      "source": "dailysecu",
-      "title": "중국 해킹조직서 포털 계정 800여 개 구매…성형외과 허위 후기 8,400여 건 조작, 서울경찰청 52명 검거",
-      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209778",
-      "published": "2026-11-26T09:20:27Z"
     },
     {
       "source": "kisa",
